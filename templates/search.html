@@ -10,7 +10,7 @@
         <h2>Search for a Stock</h2>
         <form method="POST" action="/search">
             <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" required>
-            <button type="submit">Start Trading</button>
+            <button type="submit" class="trade-button trade-button--secondary">Start Trading</button>
         </form>
         {% if error %}
         <p class="error">{{ error }}</p>

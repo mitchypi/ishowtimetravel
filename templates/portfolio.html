@@ -14,8 +14,8 @@
 
     <div class="info">
         <p><strong>Date:</strong> {{ date }} ({{ time_of_day }})</p>
-        <p><strong>Cash:</strong> ${{ "%.2f"|format(cash) }}</p>
-        <p><strong>Total Portfolio Value:</strong> ${{ "%.2f"|format(portfolio_value) }}</p>
+        <p><strong>Cash:</strong> {{ cash|fmt_currency }}</p>
+        <p><strong>Total Portfolio Value:</strong> {{ portfolio_value|fmt_currency }}</p>
     </div>
 
     <div class="time-controls-main">
@@ -42,6 +42,76 @@
         </form>
     </div>
 
+    {% if jump_error %}
+    <div class="notification error-notification">
+        ⚠️ {{ jump_error }}
+    </div>
+    {% endif %}
+
+    <div class="buy-section-main">
+        <h2>Buy Stocks</h2>
+        <form method="POST" action="/buy/search" id="searchForm" class="search-form-main">
+            <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" required>
+            <button type="submit" class="trade-button trade-button--secondary">Search</button>
+        </form>
+        {% if buy_error %}
+        <p class="error">{{ buy_error }}</p>
+        {% endif %}
+        <div id="loadingMessage" style="display:none; margin-top: 15px; color: #007bff;">
+            <strong>Loading stock data... This may take a moment for first-time downloads.</strong>
+        </div>
+
+        {% if buy_stock %}
+        <div class="stock-buy-details">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>{{ buy_stock.symbol }} - {{ buy_stock.name }}</h3>
+                <form method="POST" action="/pin/{{ buy_stock.symbol }}" style="display:inline;">
+                    <button type="submit" class="pin-btn">📌 Pin Stock</button>
+                </form>
+            </div>
+
+            <!-- DEBUG: price_available = {{ buy_stock.price_available }}, price = {{ buy_stock.price }} -->
+            {% if not buy_stock.price_available or buy_stock.price is none %}
+            <div class="price-unavailable-warning">
+                <p><strong>⚠️ No price data available for {{ buy_stock.symbol }} on {{ date }}</strong></p>
+                <p class="unavailable-hint">This stock may not have existed yet, or trading data is not available for this date. Try jumping to a later date.</p>
+            </div>
+            {% elif buy_stock.price_available %}
+            <p><strong>Current Price:</strong> {{ buy_stock.price|fmt_currency }}
+                {% if buy_stock.change is not none %}
+                    <span class="{{ 'positive' if buy_stock.change >= 0 else 'negative' }}">
+                        {{ buy_stock.change|fmt_signed_currency }}
+                        ({{ '+' if buy_stock.percent_change >= 0 else '' }}{{ "%.2f"|format(buy_stock.percent_change) }}%)
+                    </span>
+                {% endif %}
+            </p>
+
+            <div class="buy-forms-inline">
+                <form method="POST" action="/buy/execute" class="trade-form-inline">
+                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
+                    <label>Shares:</label>
+                    <input type="number" name="shares" min="0.0001" step="0.0001" placeholder="Qty" required>
+                    <button type="submit" class="trade-button trade-button--buy">Buy</button>
+                </form>
+
+                <form method="POST" action="/buy/execute" class="trade-form-inline">
+                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
+                    <label>Cash:</label>
+                    <input type="number" name="cash" min="0.01" step="0.01" placeholder="$" required>
+                    <button type="submit" class="trade-button trade-button--buy">Buy</button>
+                </form>
+
+                <form method="POST" action="/buy/execute" class="trade-form-inline">
+                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
+                    <input type="hidden" name="cash" value="{{ cash }}">
+                    <button type="submit" class="trade-button trade-button--buy">Buy All</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
     {% if portfolio %}
     <div class="portfolio">
         <h2>Your Holdings</h2>
@@ -58,27 +128,27 @@
             {% for holding in portfolio %}
             <tr>
                 <td><strong>{{ holding.symbol }}</strong></td>
-                <td>{{ holding.shares }}</td>
-                <td>${{ "%.2f"|format(holding.avg_cost) }}</td>
+                <td>{{ holding.shares|fmt_shares }}</td>
+                <td>{{ holding.avg_cost|fmt_currency }}</td>
                 <td>
-                    ${{ "%.2f"|format(holding.price) }}
+                    {{ holding.price|fmt_currency }}
                     {% if holding.change is not none %}
                         <span class="{{ 'positive' if holding.change >= 0 else 'negative' }}">
                             ({{ '+' if holding.percent_change >= 0 else '' }}{{ "%.2f"|format(holding.percent_change) }}%)
                         </span>
                     {% endif %}
                 </td>
-                <td>${{ "%.2f"|format(holding.position_value) }}</td>
+                <td>{{ holding.position_value|fmt_currency }}</td>
                 <td>
                     <span class="{{ 'positive' if holding.total_gain_loss >= 0 else 'negative' }}">
-                        {{ '+' if holding.total_gain_loss >= 0 else '' }}${{ "%.2f"|format(holding.total_gain_loss) }}
+                        {{ holding.total_gain_loss|fmt_signed_currency }}
                         ({{ '+' if holding.gain_loss_percent >= 0 else '' }}{{ "%.2f"|format(holding.gain_loss_percent) }}%)
                     </span>
                 </td>
                 <td>
-                    <button class="sell-action-btn" onclick="showSellForm('{{ holding.symbol }}', {{ holding.shares }})">Sell</button>
-                    <form method="POST" action="/sell/{{ holding.symbol }}/all" style="display:inline;" onsubmit="return confirm('Sell all {{ holding.shares }} shares of {{ holding.symbol }}?')">
-                        <button type="submit" class="sell-all-btn">Sell All</button>
+                    <button class="trade-button trade-button--sell" onclick="showSellForm('{{ holding.symbol }}', {{ holding.shares }})">Sell</button>
+                    <form method="POST" action="/sell/{{ holding.symbol }}/all" style="display:inline;" onsubmit="return confirm('Sell all {{ holding.shares|fmt_shares }} shares of {{ holding.symbol }}?')">
+                        <button type="submit" class="trade-button trade-button--sell">Sell All</button>
                     </form>
                 </td>
             </tr>
@@ -108,9 +178,9 @@
                 <td>{{ tx.date }} ({{ tx.time }})</td>
                 <td><span class="{{ 'buy-label' if 'BUY' in tx.type else 'sell-label' }}">{{ tx.type }}</span></td>
                 <td>{{ tx.symbol }}</td>
-                <td>{{ tx.shares }}</td>
-                <td>${{ "%.2f"|format(tx.price) }}</td>
-                <td>${{ "%.2f"|format(tx.total) }}</td>
+                <td>{{ tx.shares|fmt_shares }}</td>
+                <td>{{ tx.price|fmt_currency }}</td>
+                <td>{{ tx.total|fmt_currency }}</td>
             </tr>
             {% endfor %}
         </table>
@@ -122,54 +192,145 @@
         <canvas id="portfolioChart"></canvas>
     </div>
 
-    <div class="buy-section-main">
-        <h2>Buy Stocks</h2>
-        <form method="POST" action="/buy/search" id="searchForm" class="search-form-main">
-            <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" required>
-            <button type="submit">Search</button>
-        </form>
-        {% if buy_error %}
-        <p class="error">{{ buy_error }}</p>
-        {% endif %}
-        <div id="loadingMessage" style="display:none; margin-top: 15px; color: #007bff;">
-            <strong>Loading stock data... This may take a moment for first-time downloads.</strong>
-        </div>
+    {% if pinned_stocks %}
+    <div class="pinned-stocks-section">
+        <h2>📌 Pinned Stocks</h2>
+        <p class="pinned-intro">Quick access to stocks you're watching</p>
+        <div class="pinned-grid">
+            {% for stock in pinned_stocks %}
+            <div class="pinned-card">
+                <div class="stock-buy-details pinned-stock-details">
+                    <div class="pinned-header">
+                        <h3>{{ stock.symbol }} - {{ stock.name }}</h3>
+                        <form method="POST" action="/unpin/{{ stock.symbol }}" style="display:inline;">
+                            <button type="submit" class="unpin-btn" title="Unpin">×</button>
+                        </form>
+                    </div>
 
-        {% if buy_stock %}
-        <div class="stock-buy-details">
-            <h3>{{ buy_stock.symbol }} - {{ buy_stock.name }}</h3>
-            <p><strong>Current Price:</strong> ${{ "%.2f"|format(buy_stock.price) }}
-                {% if buy_stock.change is not none %}
-                    <span class="{{ 'positive' if buy_stock.change >= 0 else 'negative' }}">
-                        {{ '+' if buy_stock.change >= 0 else '' }}${{ "%.2f"|format(buy_stock.change) }}
-                        ({{ '+' if buy_stock.percent_change >= 0 else '' }}{{ "%.2f"|format(buy_stock.percent_change) }}%)
-                    </span>
-                {% endif %}
-            </p>
+                    {% if stock.price_available %}
+                    <p class="pinned-price">
+                        {{ stock.price|fmt_currency }}
+                        {% if stock.change is not none %}
+                            <span class="{{ 'positive' if stock.change >= 0 else 'negative' }}">
+                                {{ '+' if stock.percent_change >= 0 else '' }}{{ "%.2f"|format(stock.percent_change) }}%
+                            </span>
+                        {% endif %}
+                    </p>
 
-            <div class="buy-forms-inline">
-                <form method="POST" action="/buy/execute" class="trade-form-inline">
-                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
-                    <label>Shares:</label>
-                    <input type="number" name="shares" min="1" placeholder="Qty" required>
-                    <button type="submit" class="buy-btn">Buy</button>
-                </form>
+                    <div class="buy-forms-inline">
+                        <form method="POST" action="/buy/execute" class="trade-form-inline">
+                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
+                            <label>Shares:</label>
+                            <input type="number" name="shares" min="0.0001" step="0.0001" placeholder="Qty" required>
+                            <button type="submit" class="trade-button trade-button--buy">Buy</button>
+                        </form>
 
-                <form method="POST" action="/buy/execute" class="trade-form-inline">
-                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
-                    <label>Cash:</label>
-                    <input type="number" name="cash" min="0.01" step="0.01" placeholder="$" required>
-                    <button type="submit" class="buy-btn">Buy</button>
-                </form>
+                        <form method="POST" action="/buy/execute" class="trade-form-inline">
+                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
+                            <label>Cash:</label>
+                            <input type="number" name="cash" min="0.01" step="0.01" placeholder="$" required>
+                            <button type="submit" class="trade-button trade-button--buy">Buy</button>
+                        </form>
 
-                <form method="POST" action="/buy/execute" class="trade-form-inline">
-                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
-                    <input type="hidden" name="cash" value="{{ cash }}">
-                    <button type="submit" class="buy-btn-all-inline">Buy All</button>
-                </form>
+                        <form method="POST" action="/buy/execute" class="trade-form-inline">
+                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
+                            <input type="hidden" name="cash" value="{{ cash }}">
+                            <button type="submit" class="trade-button trade-button--buy">Buy All</button>
+                        </form>
+                    </div>
+
+                    {% if holdings.get(stock.symbol, {}).get('shares', 0) > 0 %}
+                    <div class="pinned-sell-actions trade-button-group">
+                        <button class="trade-button trade-button--sell trade-button--wide" onclick="showSellForm('{{ stock.symbol }}', {{ holdings.get(stock.symbol, {}).get('shares', 0) }})">Sell</button>
+                        <form method="POST" action="/sell/{{ stock.symbol }}/all" onsubmit="return confirm('Sell all {{ holdings.get(stock.symbol, {}).get('shares', 0)|fmt_shares }} shares of {{ stock.name }}?')">
+                            <button type="submit" class="trade-button trade-button--sell trade-button--wide">Sell All</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                    {% else %}
+                    <div class="price-unavailable-warning">
+                        <p><strong>⚠️ No price data available for {{ stock.symbol }} on {{ date }}</strong></p>
+                        <p class="unavailable-hint">This stock may not have existed yet, or trading data is not available for this date. Try jumping to a later date.</p>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if crypto_data %}
+    <div class="crypto-section">
+        <h2>Cryptocurrencies</h2>
+        <p class="crypto-intro">Buy and sell cryptocurrencies that have been invented!</p>
+        <div class="crypto-grid">
+            {% for crypto in crypto_data %}
+            <div class="crypto-card">
+                <h3>{{ crypto.name }} ({{ crypto.symbol }})</h3>
+                <p class="crypto-price">
+                    {{ crypto.price|fmt_currency }}
+                    {% if crypto.change is not none %}
+                        <span class="{{ 'positive' if crypto.change >= 0 else 'negative' }}">
+                            {{ '+' if crypto.percent_change >= 0 else '' }}{{ "%.2f"|format(crypto.percent_change) }}%
+                        </span>
+                    {% endif %}
+                </p>
+                <div class="crypto-actions trade-button-group">
+                    <button class="trade-button trade-button--buy trade-button--wide" onclick="showBuyForm('{{ crypto.symbol }}', '{{ crypto.name }}', {{ crypto.price }}, {{ cash }})">Buy</button>
+                    <button class="trade-button trade-button--sell trade-button--wide" onclick="showSellForm('{{ crypto.symbol }}', {{ holdings.get(crypto.symbol, {}).get('shares', 0) }})">Sell</button>
+                </div>
+                <div class="crypto-actions-all trade-button-group">
+                    <form method="POST" action="/buy/execute" >
+                        <input type="hidden" name="symbol" value="{{ crypto.symbol }}">
+                        <input type="hidden" name="cash" value="{{ cash }}">
+                        <button type="submit" class="trade-button trade-button--buy trade-button--wide">Buy All</button>
+                    </form>
+                    {% if holdings.get(crypto.symbol, {}).get('shares', 0) > 0 %}
+                    <form method="POST" action="/sell/{{ crypto.symbol }}/all"  onsubmit="return confirm('Sell all {{ holdings.get(crypto.symbol, {}).get('shares', 0)|fmt_shares }} of {{ crypto.name }}?')">
+                        <button type="submit" class="trade-button trade-button--sell trade-button--wide">Sell All</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Buy Crypto Modal -->
+    <div id="buyCryptoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBuyForm()">&times;</span>
+            <h2>Buy <span id="buyCryptoName"></span></h2>
+            <p><strong>Price:</strong> $<span id="buyCryptoPrice"></span></p>
+            <p><strong>Available Cash:</strong> $<span id="buyCryptoAvailableCash"></span></p>
+            <form method="POST" action="/buy/execute" class="modal-trade-form">
+                <input type="hidden" name="symbol" id="buyCryptoSymbol1">
+                <div class="form-group">
+                    <label>Buy by Shares:</label>
+                    <input type="number" name="shares" min="0.0001" step="0.0001" placeholder="Amount" required>
+                    <button type="submit" class="trade-button trade-button--buy">Buy</button>
+                </div>
+            </form>
+
+            <form method="POST" action="/buy/execute" class="modal-trade-form">
+                <input type="hidden" name="symbol" id="buyCryptoSymbol2">
+                <div class="form-group">
+                    <label>Buy by Cash:</label>
+                    <input type="number" name="cash" min="0.01" step="0.01" placeholder="Dollar amount" required>
+                    <button type="submit" class="trade-button trade-button--buy">Buy</button>
+                </div>
+            </form>
+
+            <form method="POST" action="/buy/execute" class="modal-trade-form">
+                <input type="hidden" name="symbol" id="buyCryptoSymbol3">
+                <input type="hidden" name="cash" id="buyCryptoAllCash">
+                <div class="form-group">
+                    <button type="submit" class="trade-button trade-button--buy">Buy All (Spend All Cash)</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Sell Modal -->
@@ -180,13 +341,13 @@
             <form method="POST" id="sellForm">
                 <div class="form-group">
                     <label>Sell by Shares:</label>
-                    <input type="number" name="shares" min="1" id="sellSharesMax" placeholder="Number of shares">
-                    <button type="submit" class="sell-btn">Sell Shares</button>
+                    <input type="number" name="shares" min="0.0001" step="0.0001" id="sellSharesMax" placeholder="Number of shares">
+                    <button type="submit" class="trade-button trade-button--sell">Sell Shares</button>
                 </div>
                 <div class="form-group">
                     <label>Sell by Cash Amount:</label>
                     <input type="number" name="cash" min="0.01" step="0.01" placeholder="Dollar amount">
-                    <button type="submit" class="sell-btn">Sell for Cash</button>
+                    <button type="submit" class="trade-button trade-button--sell">Sell for Cash</button>
                 </div>
             </form>
         </div>
@@ -194,6 +355,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        const formatCurrency = (value, fractionDigits = 2) => {
+            return Number(value).toLocaleString(undefined, {
+                minimumFractionDigits: fractionDigits,
+                maximumFractionDigits: fractionDigits
+            });
+        };
+
         // Show loading message on form submit
         const searchForm = document.getElementById('searchForm');
         if (searchForm) {
@@ -203,16 +371,22 @@
         }
 
         // Portfolio value chart
-        const historyData = {{ portfolio_history | tojson | safe }};
+        const historyData = {{ monthly_history | tojson | safe }};
         if (historyData && historyData.length > 0) {
             const ctx = document.getElementById('portfolioChart');
             if (ctx) {
                 new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: historyData.map(h => h.date),
+                        labels: historyData.map(h => {
+                            const date = new Date(h.date);
+                            if (!Number.isNaN(date.getTime())) {
+                                return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+                            }
+                            return h.date;
+                        }),
                         datasets: [{
-                            label: 'Portfolio Value',
+                            label: 'Monthly Portfolio Value',
                             data: historyData.map(h => h.value),
                             borderColor: '#28a745',
                             backgroundColor: 'rgba(40, 167, 69, 0.1)',
@@ -233,7 +407,10 @@
                                 beginAtZero: false,
                                 ticks: {
                                     callback: function(value) {
-                                        return '$' + value.toLocaleString();
+                                        return '$' + Number(value).toLocaleString(undefined, {
+                                            minimumFractionDigits: 2,
+                                            maximumFractionDigits: 2
+                                        });
                                     }
                                 }
                             }
@@ -255,11 +432,290 @@
         }
 
         window.onclick = function(event) {
-            const modal = document.getElementById('sellModal');
-            if (event.target == modal) {
+            const sellModal = document.getElementById('sellModal');
+            const buyModal = document.getElementById('buyCryptoModal');
+            if (event.target == sellModal) {
                 closeSellForm();
             }
+            if (event.target == buyModal) {
+                closeBuyForm();
+            }
+        }
+
+        function showBuyForm(symbol, name, price, availableCash) {
+            document.getElementById('buyCryptoSymbol').value = symbol;
+            document.getElementById('buyCryptoName').textContent = name;
+            document.getElementById('buyCryptoPrice').textContent = formatCurrency(price);
+            document.getElementById('buyCryptoAvailableCash').textContent = formatCurrency(availableCash);
+            document.getElementById('buyCryptoAllCash').value = availableCash;
+            document.getElementById('buyCryptoModal').style.display = 'block';
+        }
+
+        function closeBuyForm() {
+            document.getElementById('buyCryptoModal').style.display = 'none';
+        }
+
+        function showBuyStockModal(symbol, name, price, availableCash) {
+            // Populate all three forms with the symbol
+            document.getElementById('buyCryptoSymbol1').value = symbol;
+            document.getElementById('buyCryptoSymbol2').value = symbol;
+            document.getElementById('buyCryptoSymbol3').value = symbol;
+            document.getElementById('buyCryptoName').textContent = name;
+            document.getElementById('buyCryptoPrice').textContent = formatCurrency(price);
+            document.getElementById('buyCryptoAvailableCash').textContent = formatCurrency(availableCash);
+            document.getElementById('buyCryptoAllCash').value = availableCash;
+            document.getElementById('buyCryptoModal').style.display = 'block';
         }
     </script>
+
+    <style>
+        .pinned-stocks-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .pinned-intro {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .pinned-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .pinned-card {
+            padding: 0;
+        }
+
+        .pinned-stock-details {
+            background: #fff;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pinned-stock-details:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .pinned-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .pinned-header h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .unpin-btn {
+            background: none;
+            border: none;
+            color: #dc3545;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .unpin-btn:hover {
+            color: #c82333;
+        }
+
+        .pinned-price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #007bff;
+            margin: 10px 0;
+        }
+
+        .pinned-sell-actions {
+            margin-top: 12px;
+        }
+
+        .pin-btn {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .pin-btn:hover {
+            background-color: #e0a800;
+        }
+
+        .price-unavailable-warning {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .price-unavailable-warning p {
+            margin: 5px 0;
+            color: #856404;
+        }
+
+        .unavailable-hint {
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .crypto-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .crypto-intro {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .crypto-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .crypto-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .crypto-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .crypto-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007bff;
+            margin: 15px 0;
+        }
+
+        .crypto-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .form-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .crypto-actions-all {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .notification {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .error-notification {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </body>
 </html>

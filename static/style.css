@@ -141,30 +141,59 @@ body {
     font-size: 14px;
 }
 
-.trade-form button {
+.trade-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     padding: 10px 20px;
-    color: white;
     border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    border-radius: 4px;
     font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
     white-space: nowrap;
+    transition: background 0.15s ease, transform 0.1s ease;
 }
 
-.buy-btn {
+.trade-button:hover,
+.trade-button:focus {
+    transform: translateY(-1px);
+}
+
+.trade-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.trade-button--buy {
     background: #28a745;
 }
 
-.buy-btn:hover {
+.trade-button--buy:hover,
+.trade-button--buy:focus {
     background: #218838;
 }
 
-.sell-btn {
+.trade-button--sell {
     background: #dc3545;
 }
 
-.sell-btn:hover {
+.trade-button--sell:hover,
+.trade-button--sell:focus {
     background: #c82333;
+}
+
+.trade-button--secondary {
+    background: #17a2b8;
+}
+
+.trade-button--secondary:hover,
+.trade-button--secondary:focus {
+    background: #138496;
 }
 
 .positive {
@@ -252,19 +281,11 @@ body {
     box-sizing: border-box;
 }
 
-.search-container button {
+.search-container .trade-button {
     width: 100%;
     padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 3px;
+    justify-content: center;
     font-size: 16px;
-    cursor: pointer;
-}
-
-.search-container button:hover {
-    background: #0056b3;
 }
 
 .error {
@@ -295,35 +316,6 @@ body {
 .buy-link {
     text-align: center;
     margin: 30px 0;
-}
-
-.buy-btn-large {
-    display: inline-block;
-    padding: 15px 40px;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.buy-btn-large:hover {
-    background: #218838;
-}
-
-.sell-action-btn {
-    padding: 8px 16px;
-    background: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.sell-action-btn:hover {
-    background: #c82333;
 }
 
 .modal {
@@ -395,36 +387,6 @@ body {
     margin-bottom: 15px;
 }
 
-.sell-all-btn {
-    padding: 8px 16px;
-    background: #ffc107;
-    color: #000;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left: 5px;
-}
-
-.sell-all-btn:hover {
-    background: #e0a800;
-}
-
-.buy-btn-all {
-    width: 100%;
-    padding: 12px;
-    background: #17a2b8;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.buy-btn-all:hover {
-    background: #138496;
-}
 
 .transactions {
     background: #f0f0f0;
@@ -504,20 +466,6 @@ body {
     font-size: 16px;
 }
 
-.search-form-main button {
-    padding: 12px 30px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.search-form-main button:hover {
-    background: #0056b3;
-}
-
 .stock-buy-details {
     background: white;
     padding: 15px;
@@ -548,22 +496,26 @@ body {
 }
 
 .trade-form-inline input {
-    width: 100px;
+    width: 110px;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 3px;
 }
 
-.buy-btn-all-inline {
-    padding: 8px 20px;
-    background: #17a2b8;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
+.trade-button-group {
+    display: flex;
+    gap: 10px;
 }
 
-.buy-btn-all-inline:hover {
-    background: #138496;
+.trade-button-group form {
+    flex: 1;
+    display: flex;
+}
+
+.trade-button-group .trade-button {
+    flex: 1;
+}
+
+.trade-button--wide {
+    flex: 1;
 }
