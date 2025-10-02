@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy Stocks - Stock Market Time Machine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Buy Stocks</h1>
+        <div class="header-buttons">
+            <a href="/" class="back-btn">Back to Portfolio</a>
+        </div>
+    </div>
+
+    <div class="info">
+        <p><strong>Date:</strong> {{ date }} ({{ time_of_day }})</p>
+        <p><strong>Available Cash:</strong> ${{ "%.2f"|format(cash) }}</p>
+    </div>
+
+    <div class="search-container">
+        <h2>Search for a Stock</h2>
+        <form method="POST" action="/buy/search" id="searchForm">
+            <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" required>
+            <button type="submit">Search</button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <div id="loadingMessage" style="display:none; margin-top: 15px; color: #007bff;">
+            <strong>Loading stock data... This may take a moment for first-time downloads.</strong>
+        </div>
+    </div>
+
+    {% if symbol %}
+    <div class="stock-details">
+        <h2>{{ symbol }}{% if stock_name %} - {{ stock_name }}{% endif %}</h2>
+        <p><strong>Current Price:</strong> ${{ "%.2f"|format(price) }}
+            {% if change is not none %}
+                <span class="{{ 'positive' if change >= 0 else 'negative' }}">
+                    {{ '+' if change >= 0 else '' }}${{ "%.2f"|format(change) }}
+                    ({{ '+' if percent_change >= 0 else '' }}{{ "%.2f"|format(percent_change) }}%)
+                </span>
+            {% endif %}
+        </p>
+
+        <div class="chart-container">
+            <canvas id="priceChart"></canvas>
+        </div>
+
+        <div class="buy-forms">
+            <h3>Purchase {{ symbol }}</h3>
+            <form method="POST" action="/buy/execute" class="trade-form">
+                <input type="hidden" name="symbol" value="{{ symbol }}">
+                <label>Buy by Shares:</label>
+                <input type="number" name="shares" min="1" placeholder="Number of shares" required>
+                <button type="submit" class="buy-btn">Buy Shares</button>
+            </form>
+
+            <form method="POST" action="/buy/execute" class="trade-form">
+                <input type="hidden" name="symbol" value="{{ symbol }}">
+                <label>Buy by Cash:</label>
+                <input type="number" name="cash" min="0.01" step="0.01" placeholder="Dollar amount" required>
+                <button type="submit" class="buy-btn">Buy with Cash</button>
+            </form>
+
+            <form method="POST" action="/buy/execute" class="trade-form">
+                <input type="hidden" name="symbol" value="{{ symbol }}">
+                <input type="hidden" name="cash" value="{{ cash }}">
+                <button type="submit" class="buy-btn-all">Buy All (Spend All Cash)</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Show loading message on form submit
+        document.getElementById('searchForm').addEventListener('submit', function() {
+            document.getElementById('loadingMessage').style.display = 'block';
+        });
+
+        // Fetch price history and display chart
+        fetch('/api/history?symbol={{ symbol }}')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('priceChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.map(d => d.date),
+                        datasets: [{
+                            label: '{{ symbol }} Price',
+                            data: data.map(d => d.price),
+                            borderColor: '#007bff',
+                            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Market Time Travel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Stock Market Time Machine</h1>
+        <div class="header-buttons">
+            <a href="/exit" class="exit-btn">Change Stock</a>
+            <a href="/reset" class="reset-btn" onclick="return confirm('Are you sure you want to start over? This will reset your portfolio.')">Start Over</a>
+        </div>
+    </div>
+
+    <div class="info">
+        <p><strong>Stock:</strong> {{ symbol }}</p>
+        <p><strong>Date:</strong> {{ date }} ({{ time_of_day }})</p>
+        <p><strong>Current Price:</strong> ${{ "%.2f"|format(price) }}
+            {% if change is not none %}
+                <span class="{{ 'positive' if change >= 0 else 'negative' }}">
+                    {{ '+' if change >= 0 else '' }}${{ "%.2f"|format(change) }}
+                    ({{ '+' if percent_change >= 0 else '' }}{{ "%.2f"|format(percent_change) }}%)
+                </span>
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="portfolio">
+        <h2>Portfolio</h2>
+        <table>
+            <tr>
+                <th>Asset</th>
+                <th>Amount</th>
+                <th>Avg Cost</th>
+                <th>Current Value</th>
+                <th>Gain/Loss</th>
+            </tr>
+            <tr>
+                <td>Cash</td>
+                <td>-</td>
+                <td>-</td>
+                <td>${{ "%.2f"|format(cash) }}</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>{{ symbol }}</td>
+                <td>{{ shares }} shares</td>
+                <td>${{ "%.2f"|format(avg_cost) if shares > 0 else "-" }}</td>
+                <td>${{ "%.2f"|format(position_value) }}</td>
+                <td>
+                    {% if shares > 0 and avg_cost > 0 %}
+                        <span class="{{ 'positive' if total_gain_loss >= 0 else 'negative' }}">
+                            {{ '+' if total_gain_loss >= 0 else '' }}${{ "%.2f"|format(total_gain_loss) }}
+                            ({{ '+' if gain_loss_percent >= 0 else '' }}{{ "%.2f"|format(gain_loss_percent) }}%)
+                        </span>
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+            </tr>
+            <tr class="total">
+                <td colspan="4"><strong>Total Portfolio Value</strong></td>
+                <td><strong>${{ "%.2f"|format(portfolio_value) }}</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+
+    <div class="trading">
+        <h2>Trading</h2>
+
+        <div class="trade-section">
+            <h3>Buy</h3>
+            <form method="POST" action="/buy" class="trade-form">
+                <label>Shares:</label>
+                <input type="number" name="shares" min="1" placeholder="Number of shares" required>
+                <button type="submit" class="buy-btn">Buy Shares</button>
+            </form>
+
+            <form method="POST" action="/buy" class="trade-form">
+                <label>Cash Amount:</label>
+                <input type="number" name="cash" min="0.01" step="0.01" placeholder="Dollar amount" required>
+                <button type="submit" class="buy-btn">Buy with Cash</button>
+            </form>
+        </div>
+
+        <div class="trade-section">
+            <h3>Sell</h3>
+            <form method="POST" action="/sell" class="trade-form">
+                <label>Shares:</label>
+                <input type="number" name="shares" min="1" max="{{ shares }}" placeholder="Number of shares" required>
+                <button type="submit" class="sell-btn">Sell Shares</button>
+            </form>
+
+            <form method="POST" action="/sell" class="trade-form">
+                <label>Cash Amount:</label>
+                <input type="number" name="cash" min="0.01" step="0.01" placeholder="Dollar amount" required>
+                <button type="submit" class="sell-btn">Sell for Cash</button>
+            </form>
+        </div>
+
+        <div class="time-controls">
+            <a href="/next" class="next-btn">Next {{ 'Close' if time_of_day == 'open' else 'Day' }}</a>
+
+            <form method="POST" action="/jump" class="jump-form">
+                <label>Jump to Date:</label>
+                <input type="date" name="date" min="2020-01-01" max="2024-12-31" value="{{ date }}" required>
+                <button type="submit">Jump</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Fetch price history and display chart
+        fetch('/api/history')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('priceChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.map(d => d.date),
+                        datasets: [{
+                            label: '{{ symbol }} Price',
+                            data: data.map(d => d.price),
+                            borderColor: '#007bff',
+                            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

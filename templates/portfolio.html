@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio - Stock Market Time Machine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Stock Market Time Machine</h1>
+        <div class="header-buttons">
+            <a href="/reset" class="reset-btn" onclick="return confirm('Are you sure you want to start over? This will reset your portfolio.')">Start Over</a>
+        </div>
+    </div>
+
+    <div class="info">
+        <p><strong>Date:</strong> {{ date }} ({{ time_of_day }})</p>
+        <p><strong>Cash:</strong> ${{ "%.2f"|format(cash) }}</p>
+        <p><strong>Total Portfolio Value:</strong> ${{ "%.2f"|format(portfolio_value) }}</p>
+    </div>
+
+    <div class="time-controls-main">
+        <a href="/next" class="next-btn">Next {{ 'Close' if time_of_day == 'open' else 'Day' }}</a>
+
+        <form method="POST" action="/jump" class="jump-form">
+            <label>Jump to:</label>
+            <select name="year" required>
+                {% for y in range(2000, 2026) %}
+                <option value="{{ y }}" {% if date.startswith(y|string) %}selected{% endif %}>{{ y }}</option>
+                {% endfor %}
+            </select>
+            <select name="month" required>
+                {% for m in range(1, 13) %}
+                <option value="{{ m }}" {% if date.split('-')[1] == '%02d'|format(m) %}selected{% endif %}>{{ ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][m-1] }}</option>
+                {% endfor %}
+            </select>
+            <select name="day" required>
+                {% for d in range(1, 32) %}
+                <option value="{{ d }}" {% if date.split('-')[2] == '%02d'|format(d) %}selected{% endif %}>{{ d }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Jump</button>
+        </form>
+    </div>
+
+    {% if portfolio %}
+    <div class="portfolio">
+        <h2>Your Holdings</h2>
+        <table>
+            <tr>
+                <th>Stock</th>
+                <th>Shares</th>
+                <th>Avg Cost</th>
+                <th>Current Price</th>
+                <th>Position Value</th>
+                <th>Gain/Loss</th>
+                <th>Actions</th>
+            </tr>
+            {% for holding in portfolio %}
+            <tr>
+                <td><strong>{{ holding.symbol }}</strong></td>
+                <td>{{ holding.shares }}</td>
+                <td>${{ "%.2f"|format(holding.avg_cost) }}</td>
+                <td>
+                    ${{ "%.2f"|format(holding.price) }}
+                    {% if holding.change is not none %}
+                        <span class="{{ 'positive' if holding.change >= 0 else 'negative' }}">
+                            ({{ '+' if holding.percent_change >= 0 else '' }}{{ "%.2f"|format(holding.percent_change) }}%)
+                        </span>
+                    {% endif %}
+                </td>
+                <td>${{ "%.2f"|format(holding.position_value) }}</td>
+                <td>
+                    <span class="{{ 'positive' if holding.total_gain_loss >= 0 else 'negative' }}">
+                        {{ '+' if holding.total_gain_loss >= 0 else '' }}${{ "%.2f"|format(holding.total_gain_loss) }}
+                        ({{ '+' if holding.gain_loss_percent >= 0 else '' }}{{ "%.2f"|format(holding.gain_loss_percent) }}%)
+                    </span>
+                </td>
+                <td>
+                    <button class="sell-action-btn" onclick="showSellForm('{{ holding.symbol }}', {{ holding.shares }})">Sell</button>
+                    <form method="POST" action="/sell/{{ holding.symbol }}/all" style="display:inline;" onsubmit="return confirm('Sell all {{ holding.shares }} shares of {{ holding.symbol }}?')">
+                        <button type="submit" class="sell-all-btn">Sell All</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-portfolio">
+        <p>You don't own any stocks yet.</p>
+    </div>
+    {% endif %}
+
+    {% if transactions %}
+    <div class="transactions">
+        <h2>Recent Transactions</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            {% for tx in transactions %}
+            <tr>
+                <td>{{ tx.date }} ({{ tx.time }})</td>
+                <td><span class="{{ 'buy-label' if 'BUY' in tx.type else 'sell-label' }}">{{ tx.type }}</span></td>
+                <td>{{ tx.symbol }}</td>
+                <td>{{ tx.shares }}</td>
+                <td>${{ "%.2f"|format(tx.price) }}</td>
+                <td>${{ "%.2f"|format(tx.total) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+    <div class="portfolio-chart">
+        <h2>Portfolio Value History</h2>
+        <canvas id="portfolioChart"></canvas>
+    </div>
+
+    <div class="buy-section-main">
+        <h2>Buy Stocks</h2>
+        <form method="POST" action="/buy/search" id="searchForm" class="search-form-main">
+            <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" required>
+            <button type="submit">Search</button>
+        </form>
+        {% if buy_error %}
+        <p class="error">{{ buy_error }}</p>
+        {% endif %}
+        <div id="loadingMessage" style="display:none; margin-top: 15px; color: #007bff;">
+            <strong>Loading stock data... This may take a moment for first-time downloads.</strong>
+        </div>
+
+        {% if buy_stock %}
+        <div class="stock-buy-details">
+            <h3>{{ buy_stock.symbol }} - {{ buy_stock.name }}</h3>
+            <p><strong>Current Price:</strong> ${{ "%.2f"|format(buy_stock.price) }}
+                {% if buy_stock.change is not none %}
+                    <span class="{{ 'positive' if buy_stock.change >= 0 else 'negative' }}">
+                        {{ '+' if buy_stock.change >= 0 else '' }}${{ "%.2f"|format(buy_stock.change) }}
+                        ({{ '+' if buy_stock.percent_change >= 0 else '' }}{{ "%.2f"|format(buy_stock.percent_change) }}%)
+                    </span>
+                {% endif %}
+            </p>
+
+            <div class="buy-forms-inline">
+                <form method="POST" action="/buy/execute" class="trade-form-inline">
+                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
+                    <label>Shares:</label>
+                    <input type="number" name="shares" min="1" placeholder="Qty" required>
+                    <button type="submit" class="buy-btn">Buy</button>
+                </form>
+
+                <form method="POST" action="/buy/execute" class="trade-form-inline">
+                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
+                    <label>Cash:</label>
+                    <input type="number" name="cash" min="0.01" step="0.01" placeholder="$" required>
+                    <button type="submit" class="buy-btn">Buy</button>
+                </form>
+
+                <form method="POST" action="/buy/execute" class="trade-form-inline">
+                    <input type="hidden" name="symbol" value="{{ buy_stock.symbol }}">
+                    <input type="hidden" name="cash" value="{{ cash }}">
+                    <button type="submit" class="buy-btn-all-inline">Buy All</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Sell Modal -->
+    <div id="sellModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSellForm()">&times;</span>
+            <h2>Sell <span id="sellSymbol"></span></h2>
+            <form method="POST" id="sellForm">
+                <div class="form-group">
+                    <label>Sell by Shares:</label>
+                    <input type="number" name="shares" min="1" id="sellSharesMax" placeholder="Number of shares">
+                    <button type="submit" class="sell-btn">Sell Shares</button>
+                </div>
+                <div class="form-group">
+                    <label>Sell by Cash Amount:</label>
+                    <input type="number" name="cash" min="0.01" step="0.01" placeholder="Dollar amount">
+                    <button type="submit" class="sell-btn">Sell for Cash</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Show loading message on form submit
+        const searchForm = document.getElementById('searchForm');
+        if (searchForm) {
+            searchForm.addEventListener('submit', function() {
+                document.getElementById('loadingMessage').style.display = 'block';
+            });
+        }
+
+        // Portfolio value chart
+        const historyData = {{ portfolio_history | tojson | safe }};
+        if (historyData && historyData.length > 0) {
+            const ctx = document.getElementById('portfolioChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: historyData.map(h => h.date),
+                        datasets: [{
+                            label: 'Portfolio Value',
+                            data: historyData.map(h => h.value),
+                            borderColor: '#28a745',
+                            backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                            tension: 0.1,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        function showSellForm(symbol, maxShares) {
+            document.getElementById('sellSymbol').textContent = symbol;
+            document.getElementById('sellSharesMax').max = maxShares;
+            document.getElementById('sellForm').action = '/sell/' + symbol;
+            document.getElementById('sellModal').style.display = 'block';
+        }
+
+        function closeSellForm() {
+            document.getElementById('sellModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('sellModal');
+            if (event.target == modal) {
+                closeSellForm();
+            }
+        }
+    </script>
+</body>
+</html>

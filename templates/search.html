@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Search - Time Travel Trading</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Stock Market Time Machine</h1>
+    <div class="search-container">
+        <h2>Search for a Stock</h2>
+        <form method="POST" action="/search">
+            <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" required>
+            <button type="submit">Start Trading</button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <div class="info">
+            <p>Enter a stock ticker symbol to begin your time-traveling trading journey!</p>
+            <p>You'll start on January 1, 2020 with $10,000 in cash.</p>
+        </div>
+    </div>
+</body>
+</html>
