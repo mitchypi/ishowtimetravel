@@ -230,6 +230,20 @@ body {
     background: #0056b3;
 }
 
+.jump-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #17a2b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.jump-btn:hover {
+    background: #138496;
+}
+
 .jump-form {
     display: flex;
     align-items: center;
@@ -291,6 +305,22 @@ body {
 .error {
     color: #d9534f;
     margin: 10px 0;
+}
+
+.market-closed-note {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.market-closed-inline {
+    color: #856404;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .time-controls-main {

@@ -14,7 +14,7 @@
     </div>
 
     <div class="info">
-        <p><strong>Date:</strong> {{ date }} ({{ time_of_day }})</p>
+        <p><strong>Date:</strong> {{ date }} ({{ day_name }}) - {{ time_of_day|capitalize }}</p>
         <p><strong>Available Cash:</strong> {{ cash|fmt_currency }}</p>
     </div>
 
@@ -48,6 +48,9 @@
             <canvas id="priceChart"></canvas>
         </div>
 
+        {% if is_weekend and symbol not in crypto_symbols %}
+        <p class="market-closed-note">Stock market is closed on weekends. Use Skip Weekend to resume trading on Monday.</p>
+        {% else %}
         <div class="buy-forms">
             <h3>Purchase {{ symbol }}</h3>
             <form method="POST" action="/buy/execute" class="trade-form">
@@ -67,9 +70,10 @@
             <form method="POST" action="/buy/execute" class="trade-form">
                 <input type="hidden" name="symbol" value="{{ symbol }}">
                 <input type="hidden" name="cash" value="{{ cash }}">
-                <button type="submit" class="trade-button trade-button--buy">Buy All (Spend All Cash)</button>
+                <button type="submit" class="trade-button trade-button--buy">Buy Max (Spend All Cash)</button>
             </form>
         </div>
+        {% endif %}
     </div>
 
     <script>

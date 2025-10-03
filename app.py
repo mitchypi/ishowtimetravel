@@ -1,9 +1,10 @@
-from flask import Flask, render_template, session, redirect, url_for, request, jsonify
+﻿from flask import Flask, render_template, session, redirect, url_for, request, jsonify
 from datetime import datetime, timedelta
 from decimal import Decimal, InvalidOperation, ROUND_DOWN
 import yfinance as yf
 import pickle
 import os
+import calendar
 import time
 
 app = Flask(__name__)
@@ -57,6 +58,7 @@ class StockMarket:
     def __init__(self):
         self.cache = {}  # Cache stock data in memory
         self.ipo_dates = {}  # Cache IPO dates
+        self.market_caps = {}  # Cache latest known market caps
 
     def _get_cache_file(self, symbol):
         """Get the cache file path for a symbol"""
@@ -77,15 +79,15 @@ class StockMarket:
             if 'firstTradeDateEpochUtc' in info and info['firstTradeDateEpochUtc']:
                 ipo_date = datetime.fromtimestamp(info['firstTradeDateEpochUtc'])
                 self.ipo_dates[symbol] = ipo_date
-                print(f"✓ IPO date for {symbol}: {ipo_date.strftime('%Y-%m-%d')}")
+                print(f"âœ“ IPO date for {symbol}: {ipo_date.strftime('%Y-%m-%d')}")
                 return ipo_date
             else:
                 print(f"No firstTradeDateEpochUtc found for {symbol}")
         except Exception as e:
-            print(f"✗ Could not get IPO date from yfinance for {symbol}: {e}")
+            print(f"âœ— Could not get IPO date from yfinance for {symbol}: {e}")
 
         # Fallback: mark as unknown so we don't repeatedly query yfinance
-        print(f"⚠ No IPO date available for {symbol}, will allow any date in cache range")
+        print(f"âš  No IPO date available for {symbol}, will allow any date in cache range")
         self.ipo_dates[symbol] = None
         return None
 
@@ -101,6 +103,24 @@ class StockMarket:
         except:
             return {'name': None, 'valid': False}
 
+    def get_market_cap(self, symbol):
+        """Fetch and cache the latest market cap for a stock."""
+        if symbol in self.market_caps:
+            return self.market_caps[symbol]
+
+        try:
+            info = yf.Ticker(symbol).info
+            market_cap = info.get('marketCap')
+            if market_cap is not None and market_cap > 0:
+                self.market_caps[symbol] = market_cap
+                return market_cap
+        except Exception as exc:
+            print(f"get_market_cap failed for {symbol}: {exc}")
+
+        # Cache the miss so we don't repeatedly call out.
+        self.market_caps[symbol] = None
+        return None
+
     def load_stock_data(self, symbol, start_date='2000-01-01', end_date='2025-10-31'):
         """Load historical stock data from cache, custom CSV, or Yahoo Finance"""
         if symbol in self.cache:
@@ -115,7 +135,7 @@ class StockMarket:
                 with open(cache_file, 'rb') as f:
                     self.cache[symbol] = pickle.load(f)
                 elapsed = time.time() - start_time
-                print(f"✓ Loaded {symbol} from cache in {elapsed:.2f}s")
+                print(f"âœ“ Loaded {symbol} from cache in {elapsed:.2f}s")
                 return True
             except:
                 pass
@@ -141,19 +161,19 @@ class StockMarket:
 
                     self.cache[symbol] = df
                     elapsed = time.time() - start_time
-                    print(f"✓ Loaded {crypto_name} historical data ({len(df)} days, {date_range}) in {elapsed:.2f}s")
+                    print(f"âœ“ Loaded {crypto_name} historical data ({len(df)} days, {date_range}) in {elapsed:.2f}s")
 
                     # Save to disk cache for faster future loads
                     try:
                         with open(cache_file, 'wb') as f:
                             pickle.dump(df, f)
-                        print(f"✓ Cached {symbol} to disk")
+                        print(f"âœ“ Cached {symbol} to disk")
                     except:
                         pass
 
                     return True
             except Exception as e:
-                print(f"✗ Failed to load {crypto_name} custom data: {e}")
+                print(f"âœ— Failed to load {crypto_name} custom data: {e}")
                 print(f"  Falling back to Yahoo Finance...")
 
         # Download from Yahoo Finance if not cached
@@ -164,24 +184,24 @@ class StockMarket:
             hist = stock.history(start=start_date, end=end_date)
 
             if hist.empty:
-                print(f"✗ No data found for {symbol}")
+                print(f"âœ— No data found for {symbol}")
                 return False
 
             self.cache[symbol] = hist
             elapsed = time.time() - start_time
-            print(f"✓ Downloaded {symbol} ({len(hist)} days of data) in {elapsed:.2f}s")
+            print(f"âœ“ Downloaded {symbol} ({len(hist)} days of data) in {elapsed:.2f}s")
 
             # Save to disk cache
             try:
                 with open(cache_file, 'wb') as f:
                     pickle.dump(hist, f)
-                print(f"✓ Cached {symbol} to disk")
+                print(f"âœ“ Cached {symbol} to disk")
             except:
                 pass
 
             return True
         except Exception as e:
-            print(f"✗ Failed to download {symbol}: {e}")
+            print(f"âœ— Failed to download {symbol}: {e}")
             return False
 
     def get_price(self, symbol, date, time_of_day):
@@ -219,20 +239,24 @@ class StockMarket:
                 print(f"DEBUG get_price: {symbol} requested on {date}, which is {days_before_cache} days before cache start ({first_cache_date.strftime('%Y-%m-%d')})")
                 return None
 
-        # Find the closest trading day (look forward up to 10 days for weekends/holidays)
+        # Find the closest trading day. Stocks look backward for the last session; crypto can move forward.
         max_attempts = 10
         attempts = 0
-        while date_obj.strftime('%Y-%m-%d') not in hist.index.strftime('%Y-%m-%d'):
-            date_obj += timedelta(days=1)
+        search_forward = symbol in CRYPTOCURRENCIES
+        while True:
+            date_str = date_obj.strftime('%Y-%m-%d')
+            day_data = hist[hist.index.strftime('%Y-%m-%d') == date_str]
+            if not day_data.empty:
+                break
+
             attempts += 1
-            if date_obj > datetime.now() or attempts >= max_attempts:
+            if attempts >= max_attempts:
                 return None
 
-        date_str = date_obj.strftime('%Y-%m-%d')
-        day_data = hist[hist.index.strftime('%Y-%m-%d') == date_str]
-
-        if day_data.empty:
-            return None
+            if search_forward:
+                date_obj += timedelta(days=1)
+            else:
+                date_obj -= timedelta(days=1)
 
         return day_data['Open'].values[0] if time_of_day == 'open' else day_data['Close'].values[0]
 
@@ -311,7 +335,7 @@ def preload_crypto_data():
 
         total_elapsed = time.time() - start_time
         print("="*60)
-        print(f"✓ All cryptocurrency data loaded in {total_elapsed:.2f}s")
+        print(f"âœ“ All cryptocurrency data loaded in {total_elapsed:.2f}s")
         print("="*60 + "\n")
 
 # Cryptocurrency invention dates
@@ -352,9 +376,12 @@ def get_available_cryptos(current_date_str):
     return available
 
 def _aggregate_monthly_history(history):
-    """Aggregate portfolio history entries to one point per month."""
-    monthly = {}
+    """Aggregate portfolio history entries with adaptive fidelity based on time range."""
+    if not history:
+        return []
 
+    # First aggregate to monthly
+    monthly = {}
     for entry in history:
         date_str = entry.get('date')
         value = entry.get('value')
@@ -375,10 +402,50 @@ def _aggregate_monthly_history(history):
             }
 
     sorted_months = sorted(monthly.values(), key=lambda item: item['date'])
+
+    if not sorted_months:
+        return []
+
+    # Calculate time range in months
+    first_date = sorted_months[0]['date']
+    last_date = sorted_months[-1]['date']
+    months_diff = (last_date.year - first_date.year) * 12 + (last_date.month - first_date.month)
+
+    # Decide aggregation level based on time range
+    if months_diff <= 24:  # < 2 years: keep monthly
+        aggregation_months = 1
+    elif months_diff <= 120:  # 2-10 years: use quarterly
+        aggregation_months = 3
+    else:  # > 10 years: use semi-annual
+        aggregation_months = 6
+
+    # If aggregation is monthly, return as-is
+    if aggregation_months == 1:
+        return [{
+            'date': item['date'].strftime('%Y-%m-%d'),
+            'value': item['value']
+        } for item in sorted_months]
+
+    # Otherwise, aggregate further
+    aggregated = {}
+    for item in sorted_months:
+        date_obj = item['date']
+        # Create a key based on year and aggregation period
+        period = (date_obj.month - 1) // aggregation_months
+        period_key = f"{date_obj.year}-{period}"
+
+        existing = aggregated.get(period_key)
+        if not existing or date_obj > existing['date']:
+            aggregated[period_key] = {
+                'date': date_obj,
+                'value': item['value']
+            }
+
+    sorted_aggregated = sorted(aggregated.values(), key=lambda item: item['date'])
     return [{
         'date': item['date'].strftime('%Y-%m-%d'),
         'value': item['value']
-    } for item in sorted_months]
+    } for item in sorted_aggregated]
 
 def _decimal_from_string(value):
     """Safely convert user input to Decimal or return None"""
@@ -399,6 +466,49 @@ def _quantize_shares(amount):
 
 def _quantize_cash(amount):
     return amount.quantize(CASH_STEP, rounding=ROUND_DOWN)
+
+def _add_months(date_obj, months):
+    """Return date advanced by a month delta, clamping to month end."""
+    month_index = date_obj.month - 1 + months
+    year = date_obj.year + month_index // 12
+    month = month_index % 12 + 1
+    day = min(date_obj.day, calendar.monthrange(year, month)[1])
+    return date_obj.replace(year=year, month=month, day=day)
+
+    return filled
+
+
+def _jump_forward(days=0, months=0, years=0):
+    """Advance the simulation forward by fixed intervals."""
+    if 'current_date' not in session:
+        return redirect(url_for('index'))
+
+    current = datetime.strptime(session['current_date'], '%Y-%m-%d')
+    total_months = months + (years * 12)
+    progressed = False
+
+    if total_months > 0:
+        for _ in range(total_months):
+            current = _add_months(current, 1)
+            session['current_date'] = current.strftime('%Y-%m-%d')
+            session['time_of_day'] = 'open'
+            _update_portfolio_value(session)
+        progressed = True
+
+    if days > 0:
+        for _ in range(days):
+            current += timedelta(days=1)
+            session['current_date'] = current.strftime('%Y-%m-%d')
+            session['time_of_day'] = 'open'
+            _update_portfolio_value(session)
+        progressed = True
+
+    if not progressed:
+        _update_portfolio_value(session)
+
+    session.pop('jump_error', None)
+    return redirect(url_for('index'))
+
 
 def _parse_shares_from_form(form, price_decimal):
     """Determine share quantity from form inputs"""
@@ -514,6 +624,8 @@ def index():
     monthly_history = _aggregate_monthly_history(portfolio_history)
 
     current_date_obj = datetime.strptime(date, '%Y-%m-%d')
+    day_name = current_date_obj.strftime('%A')
+    is_weekend = current_date_obj.weekday() >= 5
     current_month_key = current_date_obj.strftime('%Y-%m')
     if monthly_history:
         last_entry_date = datetime.strptime(monthly_history[-1]['date'], '%Y-%m-%d')
@@ -522,9 +634,21 @@ def index():
             monthly_history[-1]['date'] = date
             monthly_history[-1]['value'] = portfolio_value
         else:
+            last_value = monthly_history[-1]['value']
+            gap_cursor = last_entry_date
+            next_month = _add_months(gap_cursor, 1)
+            while next_month.strftime('%Y-%m') != current_month_key:
+                monthly_history.append({
+                    'date': next_month.strftime('%Y-%m-%d'),
+                    'value': last_value
+                })
+                gap_cursor = next_month
+                next_month = _add_months(gap_cursor, 1)
             monthly_history.append({'date': date, 'value': portfolio_value})
     else:
         monthly_history = [{'date': date, 'value': portfolio_value}]
+
+    monthly_history = sorted(monthly_history, key=lambda item: item['date'])
 
     # Get buy stock info if searching - update price for current date
     buy_stock = session.get('buy_stock', None)
@@ -614,6 +738,7 @@ def index():
                     'percent_change': percent_change
                 })
 
+    crypto_symbols = list(CRYPTOCURRENCIES.keys())
     return render_template('portfolio.html',
                          date=date,
                          time_of_day=time,
@@ -628,16 +753,25 @@ def index():
                          jump_error=jump_error,
                          crypto_data=crypto_data,
                          holdings=holdings,
-                         pinned_stocks=pinned_stocks)
+                         pinned_stocks=pinned_stocks,
+                         day_name=day_name,
+                         is_weekend=is_weekend,
+                         crypto_symbols=crypto_symbols)
 
 @app.route('/buy')
 def buy_page():
     """Show buy page with search"""
+    current_date = session.get('current_date', '2000-01-01')
+    current_date_obj = datetime.strptime(current_date, '%Y-%m-%d')
+    day_name = current_date_obj.strftime('%A')
+    is_weekend = current_date_obj.weekday() >= 5
     return render_template('buy.html',
-                         date=session.get('current_date', '2000-01-01'),
+                         date=current_date,
                          time_of_day=session.get('time_of_day', 'open'),
-                         cash=session.get('cash', 10000.0))
-
+                         cash=session.get('cash', 10000.0),
+                         day_name=day_name,
+                         is_weekend=is_weekend,
+                         crypto_symbols=list(CRYPTOCURRENCIES.keys()))
 @app.route('/buy/search', methods=['POST'])
 def search_stock():
     """Search for a stock to buy"""
@@ -684,11 +818,26 @@ def get_history():
         return jsonify([])
 
     current_date = session.get('current_date', '2000-01-01')
-    start_date = datetime.strptime(current_date, '%Y-%m-%d') - timedelta(days=30)
+    # Get all data from start date (2000-01-01) to current date
+    start_date = datetime(2000, 1, 1)
     end_date = datetime.strptime(current_date, '%Y-%m-%d')
 
+    # Get full history and aggregate to monthly intervals
     history = market.get_history(symbol, start_date, end_date)
-    return jsonify(history)
+
+    # Aggregate to monthly data points (one per month)
+    monthly_data = {}
+    for point in history:
+        date_obj = datetime.strptime(point['date'], '%Y-%m-%d')
+        month_key = date_obj.strftime('%Y-%m')
+        # Keep the latest data point for each month
+        if month_key not in monthly_data or date_obj > datetime.strptime(monthly_data[month_key]['date'], '%Y-%m-%d'):
+            monthly_data[month_key] = point
+
+    # Sort by date
+    monthly_history = sorted(monthly_data.values(), key=lambda x: x['date'])
+
+    return jsonify(monthly_history)
 
 @app.route('/buy/execute', methods=['POST'])
 def execute_buy():
@@ -704,6 +853,11 @@ def execute_buy():
         price = market.get_price(symbol, session['current_date'], session['time_of_day'])
         if price is None:
             session['buy_error'] = f"No price data available for {symbol} on {session['current_date']}"
+            return redirect(url_for('index'))
+
+        current_date_obj = datetime.strptime(session['current_date'], '%Y-%m-%d')
+        if current_date_obj.weekday() >= 5 and symbol not in CRYPTOCURRENCIES:
+            session['buy_error'] = "Stock market is closed on weekends. Use Skip Weekend to trade stocks."
             return redirect(url_for('index'))
 
         price_decimal = Decimal(str(price))
@@ -731,6 +885,17 @@ def execute_buy():
         current_shares = Decimal(str(holding.get('shares', 0)))
         current_avg_cost = Decimal(str(holding.get('avg_cost', 0)))
         new_shares = _quantize_shares(current_shares + shares)
+
+        market_cap_value = market.get_market_cap(symbol)
+        if market_cap_value is not None and market_cap_value > 0:
+            cap_decimal = Decimal(str(market_cap_value))
+            position_value = new_shares * price_decimal
+            if position_value >= cap_decimal:
+                session['buy_error'] = (
+                    f"Order would control ${float(position_value):,.2f}, exceeding {symbol}'s market cap of ${float(cap_decimal):,.2f}. "
+                    "Try a smaller trade."
+                )
+                return redirect(url_for('index'))
 
         if current_shares > 0 and new_shares > 0:
             total_cost = (current_shares * current_avg_cost) + cost
@@ -776,6 +941,11 @@ def sell(symbol):
         if symbol not in market.cache:
             market.load_stock_data(symbol)
 
+        current_date_obj = datetime.strptime(session['current_date'], '%Y-%m-%d')
+        if current_date_obj.weekday() >= 5 and symbol not in CRYPTOCURRENCIES:
+            session['buy_error'] = "Stock market is closed on weekends. Use Skip Weekend to trade stocks."
+            return redirect(url_for('index'))
+
         price = market.get_price(symbol, session['current_date'], session['time_of_day'])
         if price is None:
             session['buy_error'] = f"No price data available for {symbol} on {session['current_date']}"
@@ -804,6 +974,11 @@ def sell(symbol):
         cash_balance = Decimal(str(session.get('cash', 0)))
         session['cash'] = float(_quantize_cash(cash_balance + proceeds))
 
+        # Calculate profit/loss
+        avg_cost = Decimal(str(holding['avg_cost']))
+        cost_basis = _quantize_cash(shares * avg_cost)
+        profit_loss = float(proceeds - cost_basis)
+
         remaining_shares = _quantize_shares(available_shares - shares)
 
         if remaining_shares <= 0:
@@ -825,7 +1000,8 @@ def sell(symbol):
             'symbol': symbol,
             'shares': float(shares),
             'price': price,
-            'total': float(proceeds)
+            'total': float(proceeds),
+            'profit_loss': profit_loss
         })
         session['transactions'] = transactions
 
@@ -850,6 +1026,11 @@ def sell_all(symbol):
         if symbol not in market.cache:
             market.load_stock_data(symbol)
 
+        current_date_obj = datetime.strptime(session['current_date'], '%Y-%m-%d')
+        if current_date_obj.weekday() >= 5 and symbol not in CRYPTOCURRENCIES:
+            session['buy_error'] = "Stock market is closed on weekends. Use Skip Weekend to trade stocks."
+            return redirect(url_for('index'))
+
         price = market.get_price(symbol, session['current_date'], session['time_of_day'])
         if price is None:
             session['buy_error'] = f"No price data available for {symbol} on {session['current_date']}"
@@ -864,6 +1045,12 @@ def sell_all(symbol):
 
         price_decimal = Decimal(str(price))
         proceeds = _quantize_cash(amount * price_decimal)
+
+        # Calculate profit/loss
+        avg_cost = Decimal(str(holding['avg_cost']))
+        cost_basis = _quantize_cash(amount * avg_cost)
+        profit_loss = float(proceeds - cost_basis)
+
         cash_balance = Decimal(str(session.get('cash', 0)))
         session['cash'] = float(_quantize_cash(cash_balance + proceeds))
         del holdings[symbol]
@@ -878,7 +1065,8 @@ def sell_all(symbol):
             'symbol': symbol,
             'shares': float(amount),
             'price': price,
-            'total': float(proceeds)
+            'total': float(proceeds),
+            'profit_loss': profit_loss
         })
         session['transactions'] = transactions
 
@@ -902,6 +1090,35 @@ def next_time():
     _update_portfolio_value(session)
     return redirect(url_for('index'))
 
+@app.route('/jump/week')
+def jump_week():
+    return _jump_forward(days=7)
+
+
+@app.route('/jump/month')
+def jump_month():
+    return _jump_forward(months=1)
+
+
+@app.route('/jump/year')
+def jump_year():
+    return _jump_forward(years=1)
+
+
+@app.route('/skip/weekend')
+def skip_weekend():
+    current_date_str = session.get('current_date')
+    if not current_date_str:
+        return redirect(url_for('index'))
+
+    current = datetime.strptime(current_date_str, '%Y-%m-%d')
+    if current.weekday() < 5:
+        return redirect(url_for('index'))
+
+    days_to_skip = 7 - current.weekday()
+    return _jump_forward(days=days_to_skip)
+
+
 @app.route('/jump', methods=['POST'])
 def jump():
     try:
@@ -917,15 +1134,26 @@ def jump():
 
         # Only allow jumping forward
         if date_obj >= current_date_obj:
+            # Fill in portfolio history for all intermediate months
+            cursor = current_date_obj
+            while cursor < date_obj:
+                # Move forward by one month
+                cursor = _add_months(cursor, 1)
+                if cursor > date_obj:
+                    break
+                session['current_date'] = cursor.strftime('%Y-%m-%d')
+                session['time_of_day'] = 'open'
+                _update_portfolio_value(session)
+
+            # Set final date
             session['current_date'] = new_date
             session['time_of_day'] = 'open'
+            _update_portfolio_value(session)
         else:
             # Set error message for trying to go back in time
             session['jump_error'] = "You can't travel backwards in time! You can only jump forward."
     except:
         session['jump_error'] = "Invalid date. Please try again."
-
-    _update_portfolio_value(session)
 
     return redirect(url_for('index'))
 
@@ -964,3 +1192,4 @@ if __name__ == '__main__':
     # Preload crypto data before starting the app
     preload_crypto_data()
     app.run(debug=True, port=5001)
+
