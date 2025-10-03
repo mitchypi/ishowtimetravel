@@ -1,0 +1,5064 @@
+{
+  "generated_at": "2025-10-03T03:40:58Z",
+  "symbol_count": 562,
+  "symbols": [
+    {
+      "symbol": "MMM",
+      "name": "3M Company",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 532629702.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AOS",
+      "name": "A. O. Smith Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 114259519.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ABT",
+      "name": "Abbott Laboratories",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 1740459014.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ABBV",
+      "name": "AbbVie Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 1766558253.0,
+      "first_date": "2013-01-02",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ACN",
+      "name": "Accenture plc",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 622000000.0,
+      "first_date": "2001-07-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ADBE",
+      "name": "Adobe Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 418600000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 1622843689.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AES",
+      "name": "The AES Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 712049564.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AFL",
+      "name": "Aflac Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 534831490.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "A",
+      "name": "Agilent Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 283500427.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APD",
+      "name": "Air Products and Chemicals, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 222553640.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ABNB",
+      "name": "Airbnb, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 429079558.0,
+      "first_date": "2020-12-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AKAM",
+      "name": "Akamai Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 143385528.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ALB",
+      "name": "Albemarle Corporation",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 117682932.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ARE",
+      "name": "Alexandria Real Estate Equities, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 170721043.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ALGN",
+      "name": "Align Technology, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 72486368.0,
+      "first_date": "2001-01-30",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ALLE",
+      "name": "Allegion plc",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 85846520.0,
+      "first_date": "2013-11-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LNT",
+      "name": "Alliant Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 257053590.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ALL",
+      "name": "The Allstate Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 263505334.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 5817000000.0,
+      "first_date": "2004-08-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GOOG",
+      "name": "Alphabet Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 5430000000.0,
+      "first_date": "2004-08-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MO",
+      "name": "Altria Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 1679890953.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 10664912097.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AMCR",
+      "name": "Amcor plc",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 2308359941.0,
+      "first_date": "2012-05-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AEE",
+      "name": "Ameren Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 270409918.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AEP",
+      "name": "American Electric Power Company, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 534794763.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AXP",
+      "name": "American Express Company",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 695882227.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AIG",
+      "name": "American International Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 554003850.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AMT",
+      "name": "American Tower Corporation",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 468251225.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AWK",
+      "name": "American Water Works Company, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 195098566.0,
+      "first_date": "2008-04-23",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AMP",
+      "name": "Ameriprise Financial, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 94271565.0,
+      "first_date": "2005-09-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AME",
+      "name": "AMETEK, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 230953960.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AMGN",
+      "name": "Amgen Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 538361851.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APH",
+      "name": "Amphenol Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 1220921111.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ADI",
+      "name": "Analog Devices, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 491955436.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AON",
+      "name": "Aon plc",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 215626597.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APA",
+      "name": "APA Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 357786460.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APO",
+      "name": "Apollo Global Management, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 572026735.0,
+      "first_date": "2011-03-30",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 14840390000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 796642427.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APP",
+      "name": "AppLovin Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 307636373.0,
+      "first_date": "2021-04-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APTV",
+      "name": "Aptiv PLC",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 217759811.0,
+      "first_date": "2011-11-17",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ACGL",
+      "name": "Arch Capital Group Ltd.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 373220295.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ADM",
+      "name": "Archer-Daniels-Midland Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 480464483.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ANET",
+      "name": "Arista Networks Inc",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 1256865381.0,
+      "first_date": "2014-06-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AJG",
+      "name": "Arthur J. Gallagher & Co.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 256363000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AIZ",
+      "name": "Assurant, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 50459211.0,
+      "first_date": "2004-02-05",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "T",
+      "name": "AT&T Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 7150385480.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ATO",
+      "name": "Atmos Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 160523571.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ADSK",
+      "name": "Autodesk, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 213000000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ADP",
+      "name": "Automatic Data Processing, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 405089516.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AZO",
+      "name": "AutoZone, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 16665000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AVB",
+      "name": "AvalonBay Communities, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 142383022.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AVY",
+      "name": "Avery Dennison Corporation",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 77981594.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AXON",
+      "name": "Axon Enterprise, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 78504440.0,
+      "first_date": "2001-06-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BKR",
+      "name": "Baker Hughes Company",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 985879124.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BALL",
+      "name": "Ball Corporation",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 272148895.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 7406947312.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BAX",
+      "name": "Baxter International Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 513621061.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BDX",
+      "name": "Becton, Dickinson and Company",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 286627469.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BBY",
+      "name": "Best Buy Co., Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 210101265.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TECH",
+      "name": "Bio-Techne Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 155693441.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BIIB",
+      "name": "Biogen Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 146614598.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BLK",
+      "name": "BlackRock, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 154853337.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BX",
+      "name": "Blackstone Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 737091668.0,
+      "first_date": "2007-06-22",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "XYZ",
+      "name": "Block, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 549574000.0,
+      "first_date": "2015-11-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BK",
+      "name": "The Bank of New York Mellon Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 705240816.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BA",
+      "name": "The Boeing Company",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 756157695.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BKNG",
+      "name": "Booking Holdings Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 32409885.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BSX",
+      "name": "Boston Scientific Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 1481751634.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BMY",
+      "name": "Bristol-Myers Squibb Company",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 2035435838.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 4722365022.0,
+      "first_date": "2009-08-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BR",
+      "name": "Broadridge Financial Solutions, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 117129320.0,
+      "first_date": "2007-03-22",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BRO",
+      "name": "Brown & Brown, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 329842812.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BLDR",
+      "name": "Builders FirstSource, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 110546931.0,
+      "first_date": "2005-06-28",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BG",
+      "name": "Bunge Global SA",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 200062018.0,
+      "first_date": "2001-08-02",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BXP",
+      "name": "BXP, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 158375515.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CHRW",
+      "name": "C.H. Robinson Worldwide, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 118091162.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CDNS",
+      "name": "Cadence Design Systems, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 272490000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CPT",
+      "name": "Camden Property Trust",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 106852727.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CPB",
+      "name": "The Campbell's Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 297992525.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "COF",
+      "name": "Capital One Financial Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 639517306.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CAH",
+      "name": "Cardinal Health, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 237582682.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KMX",
+      "name": "CarMax, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 146845043.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CCL",
+      "name": "Carnival Corporation & plc",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 1167541049.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CARR",
+      "name": "Carrier Global Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 851022837.0,
+      "first_date": "2020-03-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CAT",
+      "name": "Caterpillar Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 468478923.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CBOE",
+      "name": "Cboe Global Markets, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 104590130.0,
+      "first_date": "2010-06-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CBRE",
+      "name": "CBRE Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 297554325.0,
+      "first_date": "2004-06-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CDW",
+      "name": "CDW Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 131060745.0,
+      "first_date": "2013-06-27",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "COR",
+      "name": "Cencora, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 193877881.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CNC",
+      "name": "Centene Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 491133000.0,
+      "first_date": "2001-12-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CNP",
+      "name": "CenterPoint Energy, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 652864878.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CF",
+      "name": "CF Industries Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 161972955.0,
+      "first_date": "2005-08-11",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CRL",
+      "name": "Charles River Laboratories International, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 49214178.0,
+      "first_date": "2000-06-23",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SCHW",
+      "name": "The Charles Schwab Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1815219300.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CHTR",
+      "name": "Charter Communications, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 136590984.0,
+      "first_date": "2010-01-05",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CVX",
+      "name": "Chevron Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 2014822376.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CMG",
+      "name": "Chipotle Mexican Grill, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 1340885000.0,
+      "first_date": "2006-01-26",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CB",
+      "name": "Chubb Limited",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 398690293.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CHD",
+      "name": "Church & Dwight Co., Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 243608695.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CI",
+      "name": "The Cigna Group",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 266928075.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CINF",
+      "name": "Cincinnati Financial Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 156376422.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CTAS",
+      "name": "Cintas Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 402950524.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 3953196953.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "C",
+      "name": "Citigroup Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1840897898.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CFG",
+      "name": "Citizens Financial Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 431348989.0,
+      "first_date": "2014-09-24",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CLX",
+      "name": "The Clorox Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 122309414.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CME",
+      "name": "CME Group Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 360377042.0,
+      "first_date": "2002-12-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CMS",
+      "name": "CMS Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 299335461.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KO",
+      "name": "The Coca-Cola Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 4303667252.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CTSH",
+      "name": "Cognizant Technology Solutions Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 488395937.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 215159125.0,
+      "first_date": "2021-04-14",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CL",
+      "name": "Colgate-Palmolive Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 808220815.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CMCSA",
+      "name": "Comcast Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 3682762127.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CAG",
+      "name": "Conagra Brands, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 478693731.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "COP",
+      "name": "ConocoPhillips",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 1248942311.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ED",
+      "name": "Consolidated Edison, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 360651665.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "STZ",
+      "name": "Constellation Brands, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 176266239.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CEG",
+      "name": "Constellation Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 312405579.0,
+      "first_date": "2022-01-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "COO",
+      "name": "The Cooper Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 198808921.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CPRT",
+      "name": "Copart, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 967731528.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GLW",
+      "name": "Corning Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 856618711.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CPAY",
+      "name": "Corpay, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 70614383.0,
+      "first_date": "2010-12-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CTVA",
+      "name": "Corteva, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 679100000.0,
+      "first_date": "2019-05-24",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CSGP",
+      "name": "CoStar Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 423650362.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "COST",
+      "name": "Costco Wholesale Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 443237000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CTRA",
+      "name": "Coterra Energy Inc.",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 763139972.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CRWD",
+      "name": "CrowdStrike Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 250955140.0,
+      "first_date": "2019-06-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CCI",
+      "name": "Crown Castle Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 435470061.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CSX",
+      "name": "CSX Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 1864277014.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CMI",
+      "name": "Cummins Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 137786038.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CVS",
+      "name": "CVS Health Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 1268326375.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DHR",
+      "name": "Danaher Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 716051590.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DRI",
+      "name": "Darden Restaurants, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 116313762.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DDOG",
+      "name": "Datadog, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 323270704.0,
+      "first_date": "2019-09-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DVA",
+      "name": "DaVita Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 71500000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DAY",
+      "name": "Dayforce Inc",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 158006476.0,
+      "first_date": "2018-04-26",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DECK",
+      "name": "Deckers Outdoor Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 148343362.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DE",
+      "name": "Deere & Company",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 270329392.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DELL",
+      "name": "Dell Technologies Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 338646945.0,
+      "first_date": "2016-08-17",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DAL",
+      "name": "Delta Air Lines, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 652948402.0,
+      "first_date": "2007-05-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DVN",
+      "name": "Devon Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 634800000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DXCM",
+      "name": "DexCom, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 392155265.0,
+      "first_date": "2005-04-14",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FANG",
+      "name": "Diamondback Energy, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 289486120.0,
+      "first_date": "2012-10-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DLR",
+      "name": "Digital Realty Trust, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 341050435.0,
+      "first_date": "2004-10-29",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DG",
+      "name": "Dollar General Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 220106028.0,
+      "first_date": "2009-11-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DLTR",
+      "name": "Dollar Tree, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 203967842.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "D",
+      "name": "Dominion Energy, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 853433625.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DPZ",
+      "name": "Domino's Pizza, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 33948921.0,
+      "first_date": "2004-07-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DASH",
+      "name": "DoorDash, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 402361247.0,
+      "first_date": "2020-12-09",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DOV",
+      "name": "Dover Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 137134453.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DOW",
+      "name": "Dow Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 708844151.0,
+      "first_date": "2019-03-20",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DHI",
+      "name": "D.R. Horton, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 298123529.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DTE",
+      "name": "DTE Energy Company",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 207587803.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DUK",
+      "name": "Duke Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 777624467.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DD",
+      "name": "DuPont de Nemours, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 418716685.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EMN",
+      "name": "Eastman Chemical Company",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 114832412.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ETN",
+      "name": "Eaton Corporation plc",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 389300000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EBAY",
+      "name": "eBay Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 457000000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ECL",
+      "name": "Ecolab Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 283624912.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EIX",
+      "name": "Edison International",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 384834007.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EW",
+      "name": "Edwards Lifesciences Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 587100000.0,
+      "first_date": "2000-03-27",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EA",
+      "name": "Electronic Arts Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 249343882.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ELV",
+      "name": "Elevance Health, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 225178304.0,
+      "first_date": "2001-10-30",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EME",
+      "name": "EMCOR Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 44764250.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EMR",
+      "name": "Emerson Electric Co.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 562800000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ETR",
+      "name": "Entergy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 446409069.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EOG",
+      "name": "EOG Resources, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 545993416.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EPAM",
+      "name": "EPAM Systems, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 55696909.0,
+      "first_date": "2012-02-08",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EQT",
+      "name": "EQT Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 624057000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EFX",
+      "name": "Equifax Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 123197380.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EQIX",
+      "name": "Equinix, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 97863986.0,
+      "first_date": "2000-08-11",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EQR",
+      "name": "Equity Residential",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 381898057.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ERIE",
+      "name": "Erie Indemnity Company",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 46189068.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ESS",
+      "name": "Essex Property Trust, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 64404022.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EL",
+      "name": "The Est\u00e9e Lauder Companies Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 234815064.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EG",
+      "name": "Everest Group, Ltd.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 41943291.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EVRG",
+      "name": "Evergy, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 230155314.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ES",
+      "name": "Eversource Energy",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 371115181.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EXC",
+      "name": "Exelon Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 1009987294.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EXE",
+      "name": "Expand Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 238145675.0,
+      "first_date": "2021-02-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EXPE",
+      "name": "Expedia Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 118192131.0,
+      "first_date": "2005-07-21",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EXPD",
+      "name": "Expeditors International of Washington, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 135718520.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EXR",
+      "name": "Extra Space Storage Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 212253611.0,
+      "first_date": "2004-08-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "XOM",
+      "name": "Exxon Mobil Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 4263247021.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FFIV",
+      "name": "F5, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 57447170.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FDS",
+      "name": "FactSet Research Systems Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 37806774.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FICO",
+      "name": "Fair Isaac Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 24003656.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FAST",
+      "name": "Fastenal Company",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 1147636617.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FRT",
+      "name": "Federal Realty Investment Trust",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 86266124.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FDX",
+      "name": "FedEx Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 235955461.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FIS",
+      "name": "Fidelity National Information Services, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 522378577.0,
+      "first_date": "2001-06-20",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FITB",
+      "name": "Fifth Third Bancorp",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 661887239.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FSLR",
+      "name": "First Solar, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 107247651.0,
+      "first_date": "2006-11-17",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FE",
+      "name": "FirstEnergy Corp.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 577403931.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FI",
+      "name": "Fiserv, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 543593180.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "F",
+      "name": "Ford Motor Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 3909008221.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FTNT",
+      "name": "Fortinet, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 766266033.0,
+      "first_date": "2009-11-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FTV",
+      "name": "Fortive Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 338336345.0,
+      "first_date": "2016-07-05",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FOXA",
+      "name": "Fox Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 210519458.0,
+      "first_date": "2019-03-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FOX",
+      "name": "Fox Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 235581025.0,
+      "first_date": "2019-03-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BEN",
+      "name": "Franklin Resources, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 519195475.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "FCX",
+      "name": "Freeport-McMoRan Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 1435774134.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GRMN",
+      "name": "Garmin Ltd.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 192493945.0,
+      "first_date": "2000-12-08",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IT",
+      "name": "Gartner, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 75735795.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GE",
+      "name": "GE Aerospace",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 1060439387.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GEHC",
+      "name": "GE HealthCare Technologies Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 456562037.0,
+      "first_date": "2022-12-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GEV",
+      "name": "GE Vernova Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 272223940.0,
+      "first_date": "2024-03-27",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GEN",
+      "name": "Gen Digital Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 615869113.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GNRC",
+      "name": "Generac Holdings Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 58675951.0,
+      "first_date": "2010-02-11",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GD",
+      "name": "General Dynamics Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 268993342.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GIS",
+      "name": "General Mills, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 533416422.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GM",
+      "name": "General Motors Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 952077801.0,
+      "first_date": "2010-11-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GPC",
+      "name": "Genuine Parts Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 139092294.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GILD",
+      "name": "Gilead Sciences, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 1240806916.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GPN",
+      "name": "Global Payments Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 242607106.0,
+      "first_date": "2001-01-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GL",
+      "name": "Globe Life Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 81003536.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GDDY",
+      "name": "GoDaddy Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 138449017.0,
+      "first_date": "2015-03-31",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GS",
+      "name": "The Goldman Sachs Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 302721092.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HAL",
+      "name": "Halliburton Company",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 852602102.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HIG",
+      "name": "The Hartford Insurance Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 281171656.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HAS",
+      "name": "Hasbro, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 140232540.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HCA",
+      "name": "HCA Healthcare, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 233993500.0,
+      "first_date": "2011-03-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DOC",
+      "name": "Healthpeak Properties, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 694923453.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HSIC",
+      "name": "Henry Schein, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 121268398.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HSY",
+      "name": "The Hershey Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 148110715.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HPE",
+      "name": "Hewlett Packard Enterprise Company",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 1319450062.0,
+      "first_date": "2015-10-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HLT",
+      "name": "Hilton Worldwide Holdings Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 235193753.0,
+      "first_date": "2013-12-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HOLX",
+      "name": "Hologic, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 222419282.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HD",
+      "name": "The Home Depot, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 995386647.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HON",
+      "name": "Honeywell International Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 634896562.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HRL",
+      "name": "Hormel Foods Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 549998433.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HST",
+      "name": "Host Hotels & Resorts, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 687542878.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HWM",
+      "name": "Howmet Aerospace Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 403126322.0,
+      "first_date": "2016-11-01",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HPQ",
+      "name": "HP Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 934701851.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HUBB",
+      "name": "Hubbell Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 53140009.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HUM",
+      "name": "Humana Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 120271819.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HBAN",
+      "name": "Huntington Bancshares Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1458913612.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HII",
+      "name": "Huntington Ingalls Industries, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 39240631.0,
+      "first_date": "2011-03-22",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IBM",
+      "name": "International Business Machines Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 931519242.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IEX",
+      "name": "IDEX Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 75287284.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IDXX",
+      "name": "IDEXX Laboratories, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 80004694.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ITW",
+      "name": "Illinois Tool Works Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 291500000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "INCY",
+      "name": "Incyte Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 195276145.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IR",
+      "name": "Ingersoll Rand Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 397452515.0,
+      "first_date": "2017-05-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PODD",
+      "name": "Insulet Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 70392535.0,
+      "first_date": "2007-05-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "INTC",
+      "name": "Intel Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 4757218036.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IBKR",
+      "name": "Interactive Brokers Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 445246976.0,
+      "first_date": "2007-05-04",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ICE",
+      "name": "Intercontinental Exchange, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 572423088.0,
+      "first_date": "2005-11-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IFF",
+      "name": "International Flavors & Fragrances Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 256287081.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IP",
+      "name": "International Paper Company",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 527982095.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IPG",
+      "name": "The Interpublic Group of Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 366266390.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "INTU",
+      "name": "Intuit Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 278805000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 358476506.0,
+      "first_date": "2000-06-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IVZ",
+      "name": "Invesco Ltd.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 445963773.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "INVH",
+      "name": "Invitation Homes Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 613008220.0,
+      "first_date": "2017-02-01",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IQV",
+      "name": "IQVIA Holdings Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 170000000.0,
+      "first_date": "2013-05-09",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IRM",
+      "name": "Iron Mountain Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 295348225.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "JBHT",
+      "name": "J.B. Hunt Transport Services, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 96799281.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "JBL",
+      "name": "Jabil Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 107318837.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "JKHY",
+      "name": "Jack Henry & Associates, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 72871385.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "J",
+      "name": "Jacobs Solutions Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 119536469.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 2408338872.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "JCI",
+      "name": "Johnson Controls International plc",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 654385440.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 2749753854.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "K",
+      "name": "Kellanova",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 347669200.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KVUE",
+      "name": "Kenvue Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 1919069920.0,
+      "first_date": "2023-05-04",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KDP",
+      "name": "Keurig Dr Pepper Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 1358435279.0,
+      "first_date": "2008-05-07",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KEY",
+      "name": "KeyCorp",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1096515839.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KEYS",
+      "name": "Keysight Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 171856249.0,
+      "first_date": "2014-10-20",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KMB",
+      "name": "Kimberly-Clark Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 331779938.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KIM",
+      "name": "Kimco Realty Corporation",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 677200477.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KMI",
+      "name": "Kinder Morgan, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 2222077616.0,
+      "first_date": "2011-02-11",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KKR",
+      "name": "KKR & Co. Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 890948725.0,
+      "first_date": "2010-07-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 131684530.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KHC",
+      "name": "The Kraft Heinz Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 1183599215.0,
+      "first_date": "2015-07-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "KR",
+      "name": "The Kroger Co.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 662678212.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LHX",
+      "name": "L3Harris Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 187094798.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LH",
+      "name": "Labcorp Holdings Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 83100000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LRCX",
+      "name": "Lam Research Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 1261032300.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LW",
+      "name": "Lamb Weston Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 139352480.0,
+      "first_date": "2016-11-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LVS",
+      "name": "Las Vegas Sands Corp.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 686453606.0,
+      "first_date": "2004-12-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LDOS",
+      "name": "Leidos Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 128297332.0,
+      "first_date": "2006-10-17",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LEN",
+      "name": "Lennar Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 227601639.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LII",
+      "name": "Lennox International Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 35124281.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LLY",
+      "name": "Eli Lilly and Company",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 896456759.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LIN",
+      "name": "Linde plc",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 468909532.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LYV",
+      "name": "Live Nation Entertainment, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 231950108.0,
+      "first_date": "2005-12-21",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LKQ",
+      "name": "LKQ Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 257293192.0,
+      "first_date": "2003-10-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LMT",
+      "name": "Lockheed Martin Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 233465056.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "L",
+      "name": "Loews Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 207426395.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LOW",
+      "name": "Lowe's Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 560824905.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LULU",
+      "name": "lululemon athletica inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 113468082.0,
+      "first_date": "2007-07-27",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LYB",
+      "name": "LyondellBasell Industries N.V.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 321648429.0,
+      "first_date": "2010-04-28",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MTB",
+      "name": "M&T Bank Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 156269291.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MPC",
+      "name": "Marathon Petroleum Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 304020309.0,
+      "first_date": "2011-06-24",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MAR",
+      "name": "Marriott International, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 271457839.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MMC",
+      "name": "Marsh & McLennan Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 491624043.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MLM",
+      "name": "Martin Marietta Materials, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 60306003.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MAS",
+      "name": "Masco Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 209363636.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MA",
+      "name": "Mastercard Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 897274172.0,
+      "first_date": "2006-05-25",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MTCH",
+      "name": "Match Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 240622147.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MKC",
+      "name": "McCormick & Company, Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 253041198.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MCD",
+      "name": "McDonald's Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 713604434.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MCK",
+      "name": "McKesson Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 124384393.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MDT",
+      "name": "Medtronic plc",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 1282685882.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MRK",
+      "name": "Merck & Co., Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 2497783211.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 2168962480.0,
+      "first_date": "2012-05-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MET",
+      "name": "MetLife, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 665026054.0,
+      "first_date": "2000-04-05",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MTD",
+      "name": "Mettler-Toledo International Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 20599040.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MGM",
+      "name": "MGM Resorts International",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 272191042.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MCHP",
+      "name": "Microchip Technology Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 539679667.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MU",
+      "name": "Micron Technology, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 1119125101.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 7433166379.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MAA",
+      "name": "Mid-America Apartment Communities, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 117071138.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MRNA",
+      "name": "Moderna, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 389079757.0,
+      "first_date": "2018-12-07",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MHK",
+      "name": "Mohawk Industries, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 62131911.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MOH",
+      "name": "Molina Healthcare, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 54200000.0,
+      "first_date": "2003-07-02",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TAP",
+      "name": "Molson Coors Beverage Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 185387559.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MDLZ",
+      "name": "Mondelez International, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 1293945412.0,
+      "first_date": "2001-06-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MPWR",
+      "name": "Monolithic Power Systems, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 47892000.0,
+      "first_date": "2004-11-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MNST",
+      "name": "Monster Beverage Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 976428189.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MCO",
+      "name": "Moody's Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 179358642.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1596335756.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MOS",
+      "name": "The Mosaic Company",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 317378326.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MSI",
+      "name": "Motorola Solutions, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 166603894.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MSCI",
+      "name": "MSCI Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 77365235.0,
+      "first_date": "2007-11-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NDAQ",
+      "name": "Nasdaq, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 573795242.0,
+      "first_date": "2002-07-01",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NTAP",
+      "name": "NetApp, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 199618386.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NFLX",
+      "name": "Netflix, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 424926346.0,
+      "first_date": "2002-05-23",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NEM",
+      "name": "Newmont Corporation",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 1098449725.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NWSA",
+      "name": "News Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 374561833.0,
+      "first_date": "2013-06-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NWS",
+      "name": "News Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 187707107.0,
+      "first_date": "2013-06-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NEE",
+      "name": "NextEra Energy, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 2059292588.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NKE",
+      "name": "NIKE, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 1188015740.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NI",
+      "name": "NiSource Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 470855009.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NDSN",
+      "name": "Nordson Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 56186303.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NSC",
+      "name": "Norfolk Southern Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 224354307.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NTRS",
+      "name": "Northern Trust Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 190660595.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NOC",
+      "name": "Northrop Grumman Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 143182982.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NCLH",
+      "name": "Norwegian Cruise Line Holdings Ltd.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 455250952.0,
+      "first_date": "2013-01-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NRG",
+      "name": "NRG Energy, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 193430802.0,
+      "first_date": "2003-12-02",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NUE",
+      "name": "Nucor Corporation",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 229535447.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 24347000000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NVR",
+      "name": "NVR, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 2763104.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NXPI",
+      "name": "NXP Semiconductors N.V.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 252114595.0,
+      "first_date": "2010-08-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ORLY",
+      "name": "O'Reilly Automotive, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 848496680.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "OXY",
+      "name": "Occidental Petroleum Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 984439742.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ODFL",
+      "name": "Old Dominion Freight Line, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 210168137.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "OMC",
+      "name": "Omnicom Group Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 193722889.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ON",
+      "name": "ON Semiconductor Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 408973992.0,
+      "first_date": "2000-05-02",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "OKE",
+      "name": "ONEOK, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 629755979.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ORCL",
+      "name": "Oracle Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 2850792605.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "OTIS",
+      "name": "Otis Worldwide Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 392475229.0,
+      "first_date": "2020-03-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PCAR",
+      "name": "PACCAR Inc",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 525103392.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PKG",
+      "name": "Packaging Corporation of America",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 89978783.0,
+      "first_date": "2000-01-28",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 2274261581.0,
+      "first_date": "2020-09-30",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 676870933.0,
+      "first_date": "2012-07-20",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PSKY",
+      "name": "Paramount Skydance Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 1064653411.0,
+      "first_date": "2005-12-05",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PH",
+      "name": "Parker-Hannifin Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 126544072.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PAYX",
+      "name": "Paychex, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 359894143.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PAYC",
+      "name": "Paycom Software, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 56256594.0,
+      "first_date": "2014-04-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PYPL",
+      "name": "PayPal Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 955378405.0,
+      "first_date": "2015-07-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PNR",
+      "name": "Pentair plc",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 163931255.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PEP",
+      "name": "PepsiCo, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 1369077204.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PFE",
+      "name": "Pfizer Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 5685550500.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PCG",
+      "name": "PG&E Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 2197837402.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PM",
+      "name": "Philip Morris International Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 1556589337.0,
+      "first_date": "2008-03-17",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PSX",
+      "name": "Phillips 66",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 404124265.0,
+      "first_date": "2012-04-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PNW",
+      "name": "Pinnacle West Capital Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 119427244.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PNC",
+      "name": "The PNC Financial Services Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 393807382.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "POOL",
+      "name": "Pool Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 37318008.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PPG",
+      "name": "PPG Industries, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 225700000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PPL",
+      "name": "PPL Corporation",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 739515243.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PFG",
+      "name": "Principal Financial Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 222768441.0,
+      "first_date": "2001-10-23",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PG",
+      "name": "The Procter & Gamble Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 2340485262.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PGR",
+      "name": "The Progressive Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 586400000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PLD",
+      "name": "Prologis, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 928063000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PRU",
+      "name": "Prudential Financial, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 351942941.0,
+      "first_date": "2001-12-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PEG",
+      "name": "Public Service Enterprise Group Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 499079754.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PTC",
+      "name": "PTC Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 119792704.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PSA",
+      "name": "Public Storage",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 175452848.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PHM",
+      "name": "PulteGroup, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 197297574.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PWR",
+      "name": "Quanta Services, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 149005943.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "QCOM",
+      "name": "QUALCOMM Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 1079000000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DGX",
+      "name": "Quest Diagnostics Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 111823441.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RL",
+      "name": "Ralph Lauren Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 38693006.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RJF",
+      "name": "Raymond James Financial, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 199383976.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RTX",
+      "name": "RTX Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 1338541827.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "O",
+      "name": "Realty Income Corporation",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 914306087.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "REG",
+      "name": "Regency Centers Corporation",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 181553314.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "REGN",
+      "name": "Regeneron Pharmaceuticals, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 104170296.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RF",
+      "name": "Regions Financial Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 892308354.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RSG",
+      "name": "Republic Services, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 312215820.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RMD",
+      "name": "ResMed Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 146414839.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RVTY",
+      "name": "Revvity, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 116072580.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 773963666.0,
+      "first_date": "2021-07-29",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ROK",
+      "name": "Rockwell Automation, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 112434397.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ROL",
+      "name": "Rollins, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 484640003.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ROP",
+      "name": "Roper Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 107613824.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ROST",
+      "name": "Ross Stores, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 325226266.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RCL",
+      "name": "Royal Caribbean Cruises Ltd.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 271627660.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SPGI",
+      "name": "S&P Global Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 305300000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CRM",
+      "name": "Salesforce, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 952000000.0,
+      "first_date": "2004-06-23",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SBAC",
+      "name": "SBA Communications Corporation",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 107379013.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SLB",
+      "name": "Schlumberger Limited",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 1493878835.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "STX",
+      "name": "Seagate Technology Holdings plc",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 212968277.0,
+      "first_date": "2002-12-11",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SRE",
+      "name": "Sempra",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 652472426.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NOW",
+      "name": "ServiceNow, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 207519000.0,
+      "first_date": "2012-06-29",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SHW",
+      "name": "The Sherwin-Williams Company",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 249333316.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SPG",
+      "name": "Simon Property Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 326484763.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SWKS",
+      "name": "Skyworks Solutions, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 148427568.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SJM",
+      "name": "The J. M. Smucker Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 106685160.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SW",
+      "name": "Smurfit Westrock Plc",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 522125044.0,
+      "first_date": "2008-06-17",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SNA",
+      "name": "Snap-on Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 52163371.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SOLV",
+      "name": "Solventum Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 173387798.0,
+      "first_date": "2024-03-26",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SO",
+      "name": "The Southern Company",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 1100047407.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LUV",
+      "name": "Southwest Airlines Co.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 525187709.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SWK",
+      "name": "Stanley Black & Decker, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 154792247.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SBUX",
+      "name": "Starbucks Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 1136700000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "STT",
+      "name": "State Street Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 283695342.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "STLD",
+      "name": "Steel Dynamics, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 147204589.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "STE",
+      "name": "STERIS plc",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 98490606.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SYK",
+      "name": "Stryker Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 382307298.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SMCI",
+      "name": "Super Micro Computer, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 594273308.0,
+      "first_date": "2007-03-29",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SYF",
+      "name": "Synchrony Financial",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 372057548.0,
+      "first_date": "2014-07-31",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SNPS",
+      "name": "Synopsys, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 185748673.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SYY",
+      "name": "Sysco Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 478212357.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TMUS",
+      "name": "T-Mobile US, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 1125419038.0,
+      "first_date": "2007-04-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TROW",
+      "name": "T. Rowe Price Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 219715241.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TTWO",
+      "name": "Take-Two Interactive Software, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 184470212.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TPR",
+      "name": "Tapestry, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 207005508.0,
+      "first_date": "2000-10-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TRGP",
+      "name": "Targa Resources Corp.",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 215191852.0,
+      "first_date": "2010-12-07",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TGT",
+      "name": "Target Corporation",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 454399148.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TEL",
+      "name": "TE Connectivity plc",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 295481491.0,
+      "first_date": "2007-06-14",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TDY",
+      "name": "Teledyne Technologies Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 46888498.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TER",
+      "name": "Teradyne, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 159073532.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 3325150886.0,
+      "first_date": "2010-06-29",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TXN",
+      "name": "Texas Instruments Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 909137169.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TPL",
+      "name": "Texas Pacific Land Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 22979410.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TXT",
+      "name": "Textron Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 178205295.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TMO",
+      "name": "Thermo Fisher Scientific Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 377612121.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TJX",
+      "name": "The TJX Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 1112938750.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TKO",
+      "name": "TKO Group Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 82136886.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TTD",
+      "name": "The Trade Desk, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 445666933.0,
+      "first_date": "2016-09-21",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TSCO",
+      "name": "Tractor Supply Company",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 529951669.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TT",
+      "name": "Trane Technologies plc",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 222515359.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TDG",
+      "name": "TransDigm Group Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 56350285.0,
+      "first_date": "2006-03-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TRV",
+      "name": "The Travelers Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 225133841.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TRMB",
+      "name": "Trimble Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 237969093.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TFC",
+      "name": "Truist Financial Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1289435167.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TYL",
+      "name": "Tyler Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 43261810.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TSN",
+      "name": "Tyson Foods, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 285760382.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "USB",
+      "name": "U.S. Bancorp",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1556189453.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UBER",
+      "name": "Uber Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 2085418676.0,
+      "first_date": "2019-05-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UDR",
+      "name": "UDR, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 331347194.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ULTA",
+      "name": "Ulta Beauty, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 44838364.0,
+      "first_date": "2007-10-25",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UNP",
+      "name": "Union Pacific Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 593123574.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UAL",
+      "name": "United Airlines Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 323732094.0,
+      "first_date": "2006-02-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UPS",
+      "name": "United Parcel Service, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 736042904.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "URI",
+      "name": "United Rentals, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 64341222.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UNH",
+      "name": "UnitedHealth Group Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 905673625.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UHS",
+      "name": "Universal Health Services, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 56388014.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VLO",
+      "name": "Valero Energy Corporation",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 310651744.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VTR",
+      "name": "Ventas, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 454471192.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VLTO",
+      "name": "Veralto Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 248160850.0,
+      "first_date": "2023-10-04",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VRSN",
+      "name": "VeriSign, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 93408594.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VRSK",
+      "name": "Verisk Analytics, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 139714971.0,
+      "first_date": "2009-10-07",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VZ",
+      "name": "Verizon Communications Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 4216324808.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 256390651.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VTRS",
+      "name": "Viatris Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 1165872127.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VICI",
+      "name": "VICI Properties Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 1066369778.0,
+      "first_date": "2018-01-02",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "V",
+      "name": "Visa Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 1698682527.0,
+      "first_date": "2008-03-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VST",
+      "name": "Vistra Corp.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 338820324.0,
+      "first_date": "2016-10-05",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VMC",
+      "name": "Vulcan Materials Company",
+      "asset_type": "STOCK",
+      "segment": "Materials",
+      "shares_outstanding": 132124158.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WRB",
+      "name": "W. R. Berkley Corporation",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 379292773.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GWW",
+      "name": "W.W. Grainger, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 47832244.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WAB",
+      "name": "Westinghouse Air Brake Technologies Corporation",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 170953177.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WMT",
+      "name": "Walmart Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Staples",
+      "shares_outstanding": 7972851122.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DIS",
+      "name": "The Walt Disney Company",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 1797933833.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WBD",
+      "name": "Warner Bros. Discovery, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 2475772282.0,
+      "first_date": "2005-07-08",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WM",
+      "name": "Waste Management, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 402830315.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WAT",
+      "name": "Waters Corporation",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 59524130.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WEC",
+      "name": "WEC Energy Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 321866395.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WFC",
+      "name": "Wells Fargo & Company",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 3203441209.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WELL",
+      "name": "Welltower Inc.",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 668825942.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WST",
+      "name": "West Pharmaceutical Services, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 71907325.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WDC",
+      "name": "Western Digital Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 346922126.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WY",
+      "name": "Weyerhaeuser Company",
+      "asset_type": "STOCK",
+      "segment": "Real Estate",
+      "shares_outstanding": 721511000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WSM",
+      "name": "Williams-Sonoma, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 121790333.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WMB",
+      "name": "The Williams Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Energy",
+      "shares_outstanding": 1221177427.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WTW",
+      "name": "Willis Towers Watson Public Limited Company",
+      "asset_type": "STOCK",
+      "segment": "Financials",
+      "shares_outstanding": 97547991.0,
+      "first_date": "2001-06-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WDAY",
+      "name": "Workday, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 217000000.0,
+      "first_date": "2012-10-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "WYNN",
+      "name": "Wynn Resorts, Limited",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 103976531.0,
+      "first_date": "2002-10-25",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "XEL",
+      "name": "Xcel Energy Inc.",
+      "asset_type": "STOCK",
+      "segment": "Utilities",
+      "shares_outstanding": 591426177.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "XYL",
+      "name": "Xylem Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 243409688.0,
+      "first_date": "2011-10-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "YUM",
+      "name": "Yum! Brands, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Discretionary",
+      "shares_outstanding": 277535696.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ZBRA",
+      "name": "Zebra Technologies Corporation",
+      "asset_type": "STOCK",
+      "segment": "Information Technology",
+      "shares_outstanding": 50845151.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ZBH",
+      "name": "Zimmer Biomet Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 198095984.0,
+      "first_date": "2001-07-25",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ZTS",
+      "name": "Zoetis Inc.",
+      "asset_type": "STOCK",
+      "segment": "Health Care",
+      "shares_outstanding": 443183472.0,
+      "first_date": "2013-02-01",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VTI",
+      "name": "Vanguard Total Stock Market Index Fund ETF Shares",
+      "asset_type": "ETF",
+      "segment": "Large Blend",
+      "shares_outstanding": 743262976.0,
+      "first_date": "2001-06-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF",
+      "asset_type": "ETF",
+      "segment": "Large Blend",
+      "shares_outstanding": 917782016.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IVV",
+      "name": "iShares Core S&P 500 ETF",
+      "asset_type": "ETF",
+      "segment": "Large Blend",
+      "shares_outstanding": 621550016.0,
+      "first_date": "2000-05-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "asset_type": "ETF",
+      "segment": "Large Growth",
+      "shares_outstanding": 393100000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CVNA",
+      "name": "Carvana Co.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 116947000.0,
+      "first_date": "2017-04-28",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RNMBY",
+      "name": "Rheinmetall AG",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 223116530.0,
+      "first_date": "2012-11-26",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 645032994.0,
+      "first_date": "2021-03-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EFA",
+      "name": "iShares MSCI EAFE ETF",
+      "asset_type": "ETF",
+      "segment": "Foreign Large Blend",
+      "shares_outstanding": 938400000.0,
+      "first_date": "2001-08-27",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SNOW",
+      "name": "Snowflake Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 338800000.0,
+      "first_date": "2020-09-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "XLK",
+      "name": "The Technology Select Sector SPDR Fund",
+      "asset_type": "ETF",
+      "segment": "Technology",
+      "shares_outstanding": 272056000.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 312872178.0,
+      "first_date": "2019-09-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "asset_type": "ETF",
+      "segment": "Small Blend",
+      "shares_outstanding": 281049984.0,
+      "first_date": "2000-05-26",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ZS",
+      "name": "Zscaler, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 158300823.0,
+      "first_date": "2018-03-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "XLF",
+      "name": "The Financial Select Sector SPDR Fund",
+      "asset_type": "ETF",
+      "segment": "Financial",
+      "shares_outstanding": 883444992.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "EEM",
+      "name": "iShares MSCI Emerging Markets ETF",
+      "asset_type": "ETF",
+      "segment": "Diversified Emerging Mkts",
+      "shares_outstanding": 752400000.0,
+      "first_date": "2003-04-14",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RKT",
+      "name": "Rocket Companies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financial Services",
+      "shares_outstanding": 138400000.0,
+      "first_date": "2020-08-06",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SOFI",
+      "name": "SoFi Technologies, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financial Services",
+      "shares_outstanding": 1197450100.0,
+      "first_date": "2021-01-04",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "MDB",
+      "name": "MongoDB, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 81356893.0,
+      "first_date": "2017-10-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "AFRM",
+      "name": "Affirm Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 284917717.0,
+      "first_date": "2021-01-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ZM",
+      "name": "Zoom Communications Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 266453609.0,
+      "first_date": "2019-04-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HUBS",
+      "name": "HubSpot, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 52693110.0,
+      "first_date": "2014-10-09",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "IONQ",
+      "name": "IonQ, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 323054568.0,
+      "first_date": "2021-01-04",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TOST",
+      "name": "Toast, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 510000000.0,
+      "first_date": "2021-09-22",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PINS",
+      "name": "Pinterest, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 599264132.0,
+      "first_date": "2019-04-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "U",
+      "name": "Unity Software Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 422517888.0,
+      "first_date": "2020-09-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RIVN",
+      "name": "Rivian Automotive, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 1209521515.0,
+      "first_date": "2021-11-10",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 168459019.0,
+      "first_date": "2017-04-07",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "TWLO",
+      "name": "Twilio Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 153433606.0,
+      "first_date": "2016-06-23",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CHWY",
+      "name": "Chewy, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 225061523.0,
+      "first_date": "2019-06-14",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DOCU",
+      "name": "DocuSign, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 201104117.0,
+      "first_date": "2018-04-27",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "JOBY",
+      "name": "Joby Aviation, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 855981489.0,
+      "first_date": "2020-11-09",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CELH",
+      "name": "Celsius Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Defensive",
+      "shares_outstanding": 257783358.0,
+      "first_date": "2007-01-22",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ROKU",
+      "name": "Roku, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 130251569.0,
+      "first_date": "2017-09-28",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "DOCS",
+      "name": "Doximity, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Healthcare",
+      "shares_outstanding": 136400248.0,
+      "first_date": "2021-06-24",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "HIMS",
+      "name": "Hims & Hers Health, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Healthcare",
+      "shares_outstanding": 217641958.0,
+      "first_date": "2019-09-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "GME",
+      "name": "GameStop Corp.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 447666484.0,
+      "first_date": "2002-02-13",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PARA",
+      "name": "Paramount Skydance Corporation",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 633521984.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CART",
+      "name": "Maplebear Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 263438274.0,
+      "first_date": "2023-09-19",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APPF",
+      "name": "AppFolio, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 22871704.0,
+      "first_date": "2015-06-26",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LYFT",
+      "name": "Lyft, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 406441506.0,
+      "first_date": "2019-03-29",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BROS",
+      "name": "Dutch Bros Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 126960284.0,
+      "first_date": "2021-09-15",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "SIRI",
+      "name": "Sirius XM Holdings Inc.",
+      "asset_type": "STOCK",
+      "segment": "Communication Services",
+      "shares_outstanding": 336740461.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LCID",
+      "name": "Lucid Group, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 307300000.0,
+      "first_date": "2020-09-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CFLT",
+      "name": "Confluent, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 291931187.0,
+      "first_date": "2021-06-24",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ACHR",
+      "name": "Archer Aviation Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 645026291.0,
+      "first_date": "2020-12-18",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PATH",
+      "name": "UiPath Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 453568899.0,
+      "first_date": "2021-04-21",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "S",
+      "name": "SentinelOne, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 321052037.0,
+      "first_date": "2021-06-30",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "UPST",
+      "name": "Upstart Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financial Services",
+      "shares_outstanding": 96217742.0,
+      "first_date": "2020-12-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "BILL",
+      "name": "BILL Holdings, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 101628611.0,
+      "first_date": "2019-12-12",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RUN",
+      "name": "Sunrun Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 230732572.0,
+      "first_date": "2015-08-05",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "CLSK",
+      "name": "CleanSpark, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financial Services",
+      "shares_outstanding": 281083382.0,
+      "first_date": "2016-11-16",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LMND",
+      "name": "Lemonade, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Financial Services",
+      "shares_outstanding": 73886417.0,
+      "first_date": "2020-07-02",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PTON",
+      "name": "Peloton Interactive, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Cyclical",
+      "shares_outstanding": 391926269.0,
+      "first_date": "2019-09-26",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "PLUG",
+      "name": "Plug Power Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 1164735355.0,
+      "first_date": "2000-01-03",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RELY",
+      "name": "Remitly Global, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 206193217.0,
+      "first_date": "2021-09-23",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "RXO",
+      "name": "RXO, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 163987239.0,
+      "first_date": "2022-10-27",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "APPN",
+      "name": "Appian Corporation",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 42943872.0,
+      "first_date": "2017-05-25",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "LZ",
+      "name": "LegalZoom.com, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Industrials",
+      "shares_outstanding": 180249374.0,
+      "first_date": "2021-06-30",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "COUR",
+      "name": "Coursera, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Consumer Defensive",
+      "shares_outstanding": 163700000.0,
+      "first_date": "2021-03-31",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "ALIT",
+      "name": "Alight, Inc.",
+      "asset_type": "STOCK",
+      "segment": "Technology",
+      "shares_outstanding": 528867922.0,
+      "first_date": "2020-07-17",
+      "last_date": "2025-10-02"
+    },
+    {
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "asset_type": "ETF",
+      "segment": "Large Blend",
+      "shares_outstanding": null,
+      "first_date": "2010-09-09",
+      "last_date": "2025-10-02"
+    }
+  ]
+}

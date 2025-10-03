@@ -38,6 +38,152 @@
 
 
 
+    {% if pinned_stocks %}
+
+    <div class="pinned-stocks-section">
+
+        <h2>Pinned Stocks</h2>
+
+        <p class="pinned-intro">Quick access to stocks you're watching</p>
+
+        <div class="pinned-grid">
+
+            {% for stock in pinned_stocks %}
+
+            <div class="pinned-card">
+
+                <div class="stock-buy-details pinned-stock-details">
+
+                    <div class="pinned-header">
+
+                        <h3>{{ stock.symbol }} - {{ stock.name }}</h3>
+
+                        <form method="POST" action="/unpin/{{ stock.symbol }}" style="display:inline;">
+
+                            <button type="submit" class="unpin-btn" title="Unpin">—</button>
+
+                        </form>
+
+                    </div>
+
+
+
+                    {% if stock.price_available %}
+
+                    <p class="pinned-price">
+
+                        {{ stock.price|fmt_currency }}
+
+                        {% if stock.change is not none %}
+
+                            <span class="{{ 'positive' if stock.change >= 0 else 'negative' }}">
+
+                                {{ '+' if stock.percent_change >= 0 else '' }}{{ "%.2f"|format(stock.percent_change) }}%
+
+                            </span>
+
+                        {% endif %}
+
+                    </p>
+
+
+
+                    {% if is_weekend and stock.symbol not in crypto_symbols %}
+                    <p class="market-closed-note">Stock market is closed on weekends. Use Skip Weekend to place trades.</p>
+                    {% else %}
+                    <div class="buy-forms-inline">
+
+                        <form method="POST" action="/buy/execute" class="trade-form-inline">
+
+                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
+
+                            <label>Shares:</label>
+
+                            <input type="number" name="shares" min="0.0001" step="0.0001" placeholder="Qty" required>
+
+                            <button type="submit" class="trade-button trade-button--buy">Buy</button>
+
+                        </form>
+
+
+
+                        <form method="POST" action="/buy/execute" class="trade-form-inline">
+
+                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
+
+                            <label>Cash:</label>
+
+                            <input type="number" name="cash" min="0.01" step="0.01" placeholder="$" required>
+
+                            <button type="submit" class="trade-button trade-button--buy">Buy</button>
+
+                        </form>
+
+
+
+                        <form method="POST" action="/buy/execute" class="trade-form-inline">
+
+                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
+
+                            <input type="hidden" name="cash" value="{{ cash }}">
+
+                            <button type="submit" class="trade-button trade-button--buy">Buy Max</button>
+
+                        </form>
+
+                    </div>
+                    {% endif %}
+
+
+
+                    {% if holdings.get(stock.symbol, {}).get('shares', 0) > 0 %}
+
+                    {% if is_weekend and stock.symbol not in crypto_symbols %}
+                    <span class="market-closed-inline">Market closed (weekend)</span>
+                    {% else %}
+                    <div class="pinned-sell-actions trade-button-group">
+
+                        <button class="trade-button trade-button--sell trade-button--wide" onclick="showSellForm('{{ stock.symbol }}', {{ holdings.get(stock.symbol, {}).get('shares', 0) }})">Sell</button>
+
+                        <form method="POST" action="/sell/{{ stock.symbol }}/all" onsubmit="return confirm('Sell all {{ holdings.get(stock.symbol, {}).get('shares', 0)|fmt_shares }} shares of {{ stock.name }}?')">
+
+                            <button type="submit" class="trade-button trade-button--sell trade-button--wide">Sell All</button>
+
+                        </form>
+
+                    </div>
+                    {% endif %}
+
+                    {% endif %}
+
+                    {% else %}
+
+                    <div class="price-unavailable-warning">
+
+                        <p><strong>âš ï¸ No price data available for {{ stock.symbol }} on {{ date }}</strong></p>
+
+                        <p class="unavailable-hint">This stock may not have existed yet, or trading data is not available for this date. Try jumping to a later date.</p>
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+
+
+
+
     <div class="time-controls-main">
 
         <a href="/jump/week" class="jump-btn">Next Week</a>
@@ -346,152 +492,6 @@
         {% endif %}
 
     </div>
-
-
-
-    {% if pinned_stocks %}
-
-    <div class="pinned-stocks-section">
-
-        <h2>Pinned Stocks</h2>
-
-        <p class="pinned-intro">Quick access to stocks you're watching</p>
-
-        <div class="pinned-grid">
-
-            {% for stock in pinned_stocks %}
-
-            <div class="pinned-card">
-
-                <div class="stock-buy-details pinned-stock-details">
-
-                    <div class="pinned-header">
-
-                        <h3>{{ stock.symbol }} - {{ stock.name }}</h3>
-
-                        <form method="POST" action="/unpin/{{ stock.symbol }}" style="display:inline;">
-
-                            <button type="submit" class="unpin-btn" title="Unpin">—</button>
-
-                        </form>
-
-                    </div>
-
-
-
-                    {% if stock.price_available %}
-
-                    <p class="pinned-price">
-
-                        {{ stock.price|fmt_currency }}
-
-                        {% if stock.change is not none %}
-
-                            <span class="{{ 'positive' if stock.change >= 0 else 'negative' }}">
-
-                                {{ '+' if stock.percent_change >= 0 else '' }}{{ "%.2f"|format(stock.percent_change) }}%
-
-                            </span>
-
-                        {% endif %}
-
-                    </p>
-
-
-
-                    {% if is_weekend and stock.symbol not in crypto_symbols %}
-                    <p class="market-closed-note">Stock market is closed on weekends. Use Skip Weekend to place trades.</p>
-                    {% else %}
-                    <div class="buy-forms-inline">
-
-                        <form method="POST" action="/buy/execute" class="trade-form-inline">
-
-                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
-
-                            <label>Shares:</label>
-
-                            <input type="number" name="shares" min="0.0001" step="0.0001" placeholder="Qty" required>
-
-                            <button type="submit" class="trade-button trade-button--buy">Buy</button>
-
-                        </form>
-
-
-
-                        <form method="POST" action="/buy/execute" class="trade-form-inline">
-
-                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
-
-                            <label>Cash:</label>
-
-                            <input type="number" name="cash" min="0.01" step="0.01" placeholder="$" required>
-
-                            <button type="submit" class="trade-button trade-button--buy">Buy</button>
-
-                        </form>
-
-
-
-                        <form method="POST" action="/buy/execute" class="trade-form-inline">
-
-                            <input type="hidden" name="symbol" value="{{ stock.symbol }}">
-
-                            <input type="hidden" name="cash" value="{{ cash }}">
-
-                            <button type="submit" class="trade-button trade-button--buy">Buy Max</button>
-
-                        </form>
-
-                    </div>
-                    {% endif %}
-
-
-
-                    {% if holdings.get(stock.symbol, {}).get('shares', 0) > 0 %}
-
-                    {% if is_weekend and stock.symbol not in crypto_symbols %}
-                    <span class="market-closed-inline">Market closed (weekend)</span>
-                    {% else %}
-                    <div class="pinned-sell-actions trade-button-group">
-
-                        <button class="trade-button trade-button--sell trade-button--wide" onclick="showSellForm('{{ stock.symbol }}', {{ holdings.get(stock.symbol, {}).get('shares', 0) }})">Sell</button>
-
-                        <form method="POST" action="/sell/{{ stock.symbol }}/all" onsubmit="return confirm('Sell all {{ holdings.get(stock.symbol, {}).get('shares', 0)|fmt_shares }} shares of {{ stock.name }}?')">
-
-                            <button type="submit" class="trade-button trade-button--sell trade-button--wide">Sell All</button>
-
-                        </form>
-
-                    </div>
-                    {% endif %}
-
-                    {% endif %}
-
-                    {% else %}
-
-                    <div class="price-unavailable-warning">
-
-                        <p><strong>âš ï¸ No price data available for {{ stock.symbol }} on {{ date }}</strong></p>
-
-                        <p class="unavailable-hint">This stock may not have existed yet, or trading data is not available for this date. Try jumping to a later date.</p>
-
-                    </div>
-
-                    {% endif %}
-
-                </div>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-    {% endif %}
-
-
 
 
 

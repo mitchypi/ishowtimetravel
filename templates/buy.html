@@ -21,7 +21,10 @@
     <div class="search-container">
         <h2>Search for a Stock</h2>
         <form method="POST" action="/buy/search" id="searchForm">
-            <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" required>
+            <div class="search-input-wrapper">
+                <input type="text" name="symbol" id="symbolInput" placeholder="Enter stock symbol (e.g., AAPL, TSLA, MSFT)" autocomplete="off" required>
+                <div class="autocomplete-results" id="searchSuggestions" role="listbox" aria-label="Symbol suggestions"></div>
+            </div>
             <button type="submit" class="trade-button trade-button--secondary">Search</button>
         </form>
         {% if error %}
@@ -32,6 +35,182 @@
         </div>
     </div>
 
+    <script>
+        (function() {
+            const searchForm = document.getElementById('searchForm');
+            const searchInput = document.getElementById('symbolInput');
+            const suggestionsEl = document.getElementById('searchSuggestions');
+            const loadingMessage = document.getElementById('loadingMessage');
+            const MAX_RESULTS = 5;
+            const MIN_QUERY_LENGTH = 2;
+            let tickerCache = [];
+            let tickersLoaded = false;
+            let currentMatches = [];
+            let activeIndex = -1;
+            let inflightPromise = null;
+
+            if (!searchInput || !suggestionsEl) {
+                return;
+            }
+
+            if (searchForm && loadingMessage) {
+                searchForm.addEventListener('submit', function() {
+                    loadingMessage.style.display = 'block';
+                });
+            }
+
+            async function ensureTickers() {
+                if (tickersLoaded) {
+                    return tickerCache;
+                }
+                if (inflightPromise) {
+                    return inflightPromise;
+                }
+                inflightPromise = fetch('/api/tickers')
+                    .then(function(response) {
+                        if (!response.ok) {
+                            throw new Error('Ticker request failed');
+                        }
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        tickerCache = Array.isArray(data) ? data : [];
+                        tickersLoaded = true;
+                        return tickerCache;
+                    })
+                    .catch(function(error) {
+                        console.error('Failed to load ticker list', error);
+                        tickerCache = [];
+                        tickersLoaded = true;
+                        return tickerCache;
+                    })
+                    .finally(function() {
+                        inflightPromise = null;
+                    });
+                return inflightPromise;
+            }
+
+            function clearSuggestions() {
+                currentMatches = [];
+                activeIndex = -1;
+                suggestionsEl.innerHTML = '';
+                suggestionsEl.classList.remove('is-visible');
+            }
+
+            function updateActiveItem() {
+                const items = suggestionsEl.querySelectorAll('.autocomplete-item');
+                items.forEach(function(item, index) {
+                    const isActive = index === activeIndex;
+                    item.classList.toggle('is-active', isActive);
+                    item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    if (isActive) {
+                        item.scrollIntoView({ block: 'nearest' });
+                    }
+                });
+            }
+
+            function renderSuggestions(matches) {
+                currentMatches = matches.slice(0, MAX_RESULTS);
+                if (!currentMatches.length) {
+                    clearSuggestions();
+                    return;
+                }
+                activeIndex = -1;
+                suggestionsEl.innerHTML = currentMatches.map(function(item) {
+                    const name = item.name ? item.name : '';
+                    return (
+                        '<button type="button" class="autocomplete-item" data-symbol="' + item.symbol + '"' +
+                        ' role="option" aria-selected="false">' +
+                        '<span class="autocomplete-symbol">' + item.symbol + '</span>' +
+                        '<span class="autocomplete-name">' + name + '</span>' +
+                        '</button>'
+                    );
+                }).join('');
+                suggestionsEl.classList.add('is-visible');
+            }
+
+            function handleSelection(symbol) {
+                if (!symbol) {
+                    return;
+                }
+                searchInput.value = symbol;
+                clearSuggestions();
+                if (searchForm) {
+                    if (typeof searchForm.requestSubmit === 'function') {
+                        searchForm.requestSubmit();
+                    } else {
+                        searchForm.submit();
+                    }
+                }
+            }
+
+            searchInput.addEventListener('input', function(event) {
+                const value = event.target.value.trim();
+                if (value.length < MIN_QUERY_LENGTH) {
+                    clearSuggestions();
+                    return;
+                }
+                ensureTickers().then(function() {
+                    const upper = value.toUpperCase();
+                    const matches = tickerCache.filter(function(item) {
+                        const symbol = (item.symbol || '').toUpperCase();
+                        const name = (item.name || '').toUpperCase();
+                        return symbol.startsWith(upper) || name.includes(upper);
+                    });
+                    renderSuggestions(matches);
+                });
+            });
+
+            searchInput.addEventListener('keydown', function(event) {
+                if (!currentMatches.length) {
+                    return;
+                }
+                switch (event.key) {
+                    case 'ArrowDown':
+                        event.preventDefault();
+                        activeIndex = (activeIndex + 1) % currentMatches.length;
+                        updateActiveItem();
+                        break;
+                    case 'ArrowUp':
+                        event.preventDefault();
+                        activeIndex = (activeIndex - 1 + currentMatches.length) % currentMatches.length;
+                        updateActiveItem();
+                        break;
+                    case 'Enter':
+                        if (activeIndex >= 0 && currentMatches[activeIndex]) {
+                            event.preventDefault();
+                            handleSelection(currentMatches[activeIndex].symbol);
+                        }
+                        break;
+                    case 'Escape':
+                        clearSuggestions();
+                        break;
+                    default:
+                        break;
+                }
+            });
+
+            suggestionsEl.addEventListener('mousedown', function(event) {
+                const target = event.target.closest('[data-symbol]');
+                if (!target) {
+                    return;
+                }
+                event.preventDefault();
+                handleSelection(target.getAttribute('data-symbol'));
+            });
+
+            document.addEventListener('click', function(event) {
+                if (event.target === searchInput || suggestionsEl.contains(event.target)) {
+                    return;
+                }
+                clearSuggestions();
+            });
+
+            searchInput.addEventListener('focus', function() {
+                ensureTickers();
+            });
+        })();
+    </script>
     {% if symbol %}
     <div class="stock-details">
         <h2>{{ symbol }}{% if stock_name %} - {{ stock_name }}{% endif %}</h2>
@@ -77,11 +256,6 @@
     </div>
 
     <script>
-        // Show loading message on form submit
-        document.getElementById('searchForm').addEventListener('submit', function() {
-            document.getElementById('loadingMessage').style.display = 'block';
-        });
-
         // Fetch price history and display chart
         fetch('/api/history?symbol={{ symbol }}')
             .then(response => response.json())

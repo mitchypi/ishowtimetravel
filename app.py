@@ -1,19 +1,12 @@
-﻿from flask import Flask, render_template, session, redirect, url_for, request, jsonify
+from flask import Flask, render_template, session, redirect, url_for, request, jsonify
 from datetime import datetime, timedelta
 from decimal import Decimal, InvalidOperation, ROUND_DOWN
-import yfinance as yf
-import pickle
-import os
+from market_data import catalog as data_catalog, MarketDataCatalog
 import calendar
 import time
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-this'
-
-# Directory for storing stock data
-CACHE_DIR = 'stock_cache'
-if not os.path.exists(CACHE_DIR):
-    os.makedirs(CACHE_DIR)
 
 SHARE_STEP = Decimal('0.0001')
 CASH_STEP = Decimal('0.01')
@@ -55,154 +48,68 @@ def fmt_shares(value):
     return formatted or '0'
 
 class StockMarket:
-    def __init__(self):
+    def __init__(self, catalog: MarketDataCatalog):
         self.cache = {}  # Cache stock data in memory
         self.ipo_dates = {}  # Cache IPO dates
         self.market_caps = {}  # Cache latest known market caps
-
-    def _get_cache_file(self, symbol):
-        """Get the cache file path for a symbol"""
-        return os.path.join(CACHE_DIR, f"{symbol}.pkl")
+        self.catalog = catalog
 
     def get_ipo_date(self, symbol):
         """Get the IPO date or earliest available date for a stock"""
         if symbol in self.ipo_dates:
             return self.ipo_dates[symbol]
 
-        # Always try to get from yfinance info first (even if cache exists)
-        try:
-            print(f"Fetching IPO date for {symbol} from yfinance...")
-            stock = yf.Ticker(symbol)
-            info = stock.info
+        first_available = self.catalog.get_first_available_date(symbol)
+        if first_available:
+            self.ipo_dates[symbol] = first_available
+            return first_available
 
-            # Try to get IPO date from various fields
-            if 'firstTradeDateEpochUtc' in info and info['firstTradeDateEpochUtc']:
-                ipo_date = datetime.fromtimestamp(info['firstTradeDateEpochUtc'])
-                self.ipo_dates[symbol] = ipo_date
-                print(f"âœ“ IPO date for {symbol}: {ipo_date.strftime('%Y-%m-%d')}")
-                return ipo_date
-            else:
-                print(f"No firstTradeDateEpochUtc found for {symbol}")
-        except Exception as e:
-            print(f"âœ— Could not get IPO date from yfinance for {symbol}: {e}")
-
-        # Fallback: mark as unknown so we don't repeatedly query yfinance
-        print(f"âš  No IPO date available for {symbol}, will allow any date in cache range")
         self.ipo_dates[symbol] = None
         return None
 
     def get_stock_info(self, symbol):
         """Get stock info including company name"""
-        try:
-            stock = yf.Ticker(symbol)
-            info = stock.info
-            return {
-                'name': info.get('longName', info.get('shortName', symbol)),
-                'valid': True
-            }
-        except:
-            return {'name': None, 'valid': False}
+        metadata = self.catalog.get_metadata(symbol)
+        if metadata:
+            return {'name': metadata.name, 'valid': True}
+        return {'name': None, 'valid': False}
 
     def get_market_cap(self, symbol):
         """Fetch and cache the latest market cap for a stock."""
         if symbol in self.market_caps:
             return self.market_caps[symbol]
 
-        try:
-            info = yf.Ticker(symbol).info
-            market_cap = info.get('marketCap')
-            if market_cap is not None and market_cap > 0:
-                self.market_caps[symbol] = market_cap
-                return market_cap
-        except Exception as exc:
-            print(f"get_market_cap failed for {symbol}: {exc}")
+        market_cap = self.catalog.get_latest_market_cap(symbol)
+        self.market_caps[symbol] = market_cap
+        return market_cap
 
-        # Cache the miss so we don't repeatedly call out.
-        self.market_caps[symbol] = None
-        return None
-
-    def load_stock_data(self, symbol, start_date='2000-01-01', end_date='2025-10-31'):
-        """Load historical stock data from cache, custom CSV, or Yahoo Finance"""
+    def load_stock_data(self, symbol, start_date='2000-01-03', end_date='2025-10-31'):
+        """Load historical stock data from local cache files"""
         if symbol in self.cache:
             return True
 
-        # Try to load from disk cache first
-        cache_file = self._get_cache_file(symbol)
-        if os.path.exists(cache_file):
-            try:
-                print(f"Loading {symbol} from disk cache...")
-                start_time = time.time()
-                with open(cache_file, 'rb') as f:
-                    self.cache[symbol] = pickle.load(f)
-                elapsed = time.time() - start_time
-                print(f"âœ“ Loaded {symbol} from cache in {elapsed:.2f}s")
-                return True
-            except:
-                pass
-
-        # Special handling for cryptocurrencies - load from custom CSV files
-        crypto_files = {
-            'BTC-USD': ('btc_full_historical_data.csv', 'Bitcoin', '2009-present'),
-            'ETH-USD': ('eth_full_historical_data.csv', 'Ethereum', '2015-present')
-        }
-
-        if symbol in crypto_files:
-            csv_file, crypto_name, date_range = crypto_files[symbol]
-            try:
-                if os.path.exists(csv_file):
-                    print(f"Loading {symbol} from custom historical data file...")
-                    start_time = time.time()
-                    import pandas as pd
-                    df = pd.read_csv(csv_file, index_col=0, parse_dates=True)
-
-                    # Ensure timezone-naive datetime index for compatibility
-                    if df.index.tz is not None:
-                        df.index = df.index.tz_localize(None)
-
-                    self.cache[symbol] = df
-                    elapsed = time.time() - start_time
-                    print(f"âœ“ Loaded {crypto_name} historical data ({len(df)} days, {date_range}) in {elapsed:.2f}s")
-
-                    # Save to disk cache for faster future loads
-                    try:
-                        with open(cache_file, 'wb') as f:
-                            pickle.dump(df, f)
-                        print(f"âœ“ Cached {symbol} to disk")
-                    except:
-                        pass
-
-                    return True
-            except Exception as e:
-                print(f"âœ— Failed to load {crypto_name} custom data: {e}")
-                print(f"  Falling back to Yahoo Finance...")
-
-        # Download from Yahoo Finance if not cached
-        try:
-            print(f"Downloading {symbol} data from Yahoo Finance...")
-            start_time = time.time()
-            stock = yf.Ticker(symbol)
-            hist = stock.history(start=start_date, end=end_date)
-
-            if hist.empty:
-                print(f"âœ— No data found for {symbol}")
-                return False
-
-            self.cache[symbol] = hist
-            elapsed = time.time() - start_time
-            print(f"âœ“ Downloaded {symbol} ({len(hist)} days of data) in {elapsed:.2f}s")
-
-            # Save to disk cache
-            try:
-                with open(cache_file, 'wb') as f:
-                    pickle.dump(hist, f)
-                print(f"âœ“ Cached {symbol} to disk")
-            except:
-                pass
-
-            return True
-        except Exception as e:
-            print(f"âœ— Failed to download {symbol}: {e}")
+        frame = self.catalog.get_history(symbol)
+        if frame is None or frame.empty:
+            print(f"Local data not found for {symbol}")
             return False
+
+        # Trim to requested window if provided
+        try:
+            start = datetime.strptime(start_date, '%Y-%m-%d') if start_date else None
+            end = datetime.strptime(end_date, '%Y-%m-%d') if end_date else None
+        except ValueError:
+            start = end = None
+
+        if start or end:
+            filtered = frame
+            if start is not None:
+                filtered = filtered[filtered.index >= start]
+            if end is not None:
+                filtered = filtered[filtered.index <= end]
+            frame = filtered
+
+        self.cache[symbol] = frame
+        return True
 
     def get_price(self, symbol, date, time_of_day):
         """Get price for a specific date and time"""
@@ -318,7 +225,7 @@ class StockMarket:
             'price': row['Close']
         } for date, row in filtered.iterrows()]
 
-market = StockMarket()
+market = StockMarket(data_catalog)
 
 # Preload cryptocurrency data on startup
 def preload_crypto_data():
@@ -335,7 +242,7 @@ def preload_crypto_data():
 
         total_elapsed = time.time() - start_time
         print("="*60)
-        print(f"âœ“ All cryptocurrency data loaded in {total_elapsed:.2f}s")
+        print(f"✓ All cryptocurrency data loaded in {total_elapsed:.2f}s")
         print("="*60 + "\n")
 
 # Cryptocurrency invention dates
@@ -559,12 +466,12 @@ def index():
 
     # Initialize session
     if 'current_date' not in session:
-        session['current_date'] = '2000-01-01'
+        session['current_date'] = '2000-01-03'
         session['cash'] = 10000.0
         session['time_of_day'] = 'open'
         session['holdings'] = {}  # {symbol: {'shares': 0, 'avg_cost': 0}}
         session['transactions'] = []  # Transaction history
-        session['portfolio_history'] = [{'date': '2000-01-01', 'value': 10000.0}]  # Portfolio value over time
+        session['portfolio_history'] = [{'date': '2000-01-03', 'value': 10000.0}]  # Portfolio value over time
         session['pinned_stocks'] = []  # List of pinned stock symbols
 
     date = session['current_date']
@@ -761,7 +668,7 @@ def index():
 @app.route('/buy')
 def buy_page():
     """Show buy page with search"""
-    current_date = session.get('current_date', '2000-01-01')
+    current_date = session.get('current_date', '2000-01-03')
     current_date_obj = datetime.strptime(current_date, '%Y-%m-%d')
     day_name = current_date_obj.strftime('%A')
     is_weekend = current_date_obj.weekday() >= 5
@@ -811,14 +718,29 @@ def search_stock():
     session['buy_error'] = f"Could not find stock data for: {symbol}"
     return redirect(url_for('index'))
 
+
+
+@app.route('/api/tickers')
+def api_tickers():
+    """Return the curated universe of tradeable symbols for autocomplete."""
+    symbols = []
+    for metadata in market.catalog.list_symbols(include_crypto=True):
+        symbols.append({
+            'symbol': metadata.symbol,
+            'name': metadata.name,
+            'type': metadata.asset_type,
+            'segment': metadata.segment,
+        })
+    return jsonify(symbols)
+
 @app.route('/api/history')
 def get_history():
     symbol = request.args.get('symbol')
     if not symbol:
         return jsonify([])
 
-    current_date = session.get('current_date', '2000-01-01')
-    # Get all data from start date (2000-01-01) to current date
+    current_date = session.get('current_date', '2000-01-03')
+    # Get all data from start date (2000-01-03) to current date
     start_date = datetime(2000, 1, 1)
     end_date = datetime.strptime(current_date, '%Y-%m-%d')
 
@@ -1159,7 +1081,7 @@ def jump():
 
 @app.route('/pin/<symbol>', methods=['POST'])
 def pin_stock(symbol):
-    """Pin a stock to watch list"""
+    # Pin a stock to watch list
     symbol = symbol.upper()
     pinned_stocks = session.get('pinned_stocks', [])
 
@@ -1171,7 +1093,7 @@ def pin_stock(symbol):
 
 @app.route('/unpin/<symbol>', methods=['POST'])
 def unpin_stock(symbol):
-    """Unpin a stock from watch list"""
+    # Unpin a stock from watch list
     symbol = symbol.upper()
     pinned_stocks = session.get('pinned_stocks', [])
 
@@ -1183,7 +1105,7 @@ def unpin_stock(symbol):
 
 @app.route('/reset')
 def reset():
-    """Clear session and start over"""
+    # Clear session and start over
     session.clear()
     return redirect(url_for('index'))
 
@@ -1192,4 +1114,5 @@ if __name__ == '__main__':
     # Preload crypto data before starting the app
     preload_crypto_data()
     app.run(debug=True, port=5001)
+
 
